@@ -1,1 +1,0 @@
-print('Oh hello ye me Andrey how do you do ye')
