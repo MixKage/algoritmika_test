@@ -66,31 +66,39 @@ if question == 1:
     if question == "старт":   
         while True:
             for i in range(10):
-                rand = randint(0,2)
+                rand = randint(0,6)
                 if rand == 0:
+                    sleep(0.5)
                     print("│       ●               |\n│ ●               ●     |")
                     print("│                       |\n│                     ● |")
                     print("│              ●        |\n│             ●         |")
                     print("│   ●                   |\n│                       |")
                     print("│            ●          |\n│                    ●  |")
                     print("│                       |\n│        ●              |")
-                    sleep(0.25)
+                    sleep(0.5)
                 elif rand == 1:
+                    sleep(0.5)
                     print("│                  ●    |\n│       ●             ● |")
                     print("│     ●                 |\n│             ●         |")
                     print("│                     ● |\n│                       |")
                     print("│               ●       |\n│●                      |")
                     print("│    ●                  |\n│                    ●  |")
                     print("│          ●            |\n│     ●                 |")
-                    sleep(0.25)
+                    sleep(0.5)
                 elif rand == 2:
+                    sleep(0.5)
                     print("│       ●               |\n│●               ●      |") 
                     print("│                       |\n│         ●             |")
                     print("│●                ●     |\n│  ●         ●          |")                                       
                     print("│          ●            |\n│                  ●    |")
                     print("│                  ●    |\n│                       |")
                     print("│       ●               |\n│ ●               ●     |")
+                    sleep(0.5)
+                elif rand >= 5:
+                    sleep(0.5)
+                    print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-50" + Fore.WHITE+ " здоровья.   │"); hp -= 50
                     sleep(0.25)
+                    print(f"│ Теперь у вас {hp} здоровья │\n└───────────────────────────┘")
             break
 sleep(3)
 
