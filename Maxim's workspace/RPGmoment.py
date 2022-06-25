@@ -65,11 +65,12 @@ if question == 1:
     question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " + Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ")
     if question == "старт":   
         while True:
-            print("│                       |\n│                       |")
-            print("│                       |\n│                       |")
-            print("│                       |\n│                       |")
-            print("│                       |\n│                       |")
-            print("│                       |\n│                       |")
-            print("│                       |\n│                       |")
+            for i in range(4):
+                print("│       ●     ●       ● |\n│ ●               ●     |")
+                print("│                  ●    |\n│  ●   ●              ● |")
+                print("│         ●    ●        |\n│    ●        ●      ●  |")
+                print("│   ●   ●              ●|\n│●              ●       |")
+                print("│     ●      ●          |\n│     ●    ●         ●  |")
+                print("│●         ●      ●     |\n│  ●     ●        ●    ●|")
 sleep(3)
 
