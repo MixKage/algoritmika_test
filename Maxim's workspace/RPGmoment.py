@@ -19,7 +19,7 @@ def logo():
     sleep(0.25)
     print("                                                                           ")
     sleep(0.25)
-    print("                                             _ _  _  _ _  _  _ _|_         ");sleep(0.25);print("                                            | | |(_)| | |(/_| | |          ")
+    print("                                             _ _  _  _ _  _  _ _|_         ");sleep(0.45);print("                                            | | |(_)| | |(/_| | |          ")
 
 def starter_game_menu():
     print(Fore.WHITE + "┌──────────────────────┐ \n├ 1. " + Fore.LIGHTCYAN_EX + "Играть" + Fore.WHITE + "            │")
@@ -63,13 +63,13 @@ question = starter_game_menu()
 if question == 1:
     iGame(randint(500,1000), 0, randint(0,250), randint(25,100), randint(0,150))
     question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " + Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ")
-    if question == "старт":
-        i=0
+    if question == "старт":   
         while True:
-            if i > 5:
-                break
-            print("макака")
-            i+=1
-            sleep(2)
+            print("│                       |\n│                       |")
+            print("│                       |\n│                       |")
+            print("│                       |\n│                       |")
+            print("│                       |\n│                       |")
+            print("│                       |\n│                       |")
+            print("│                       |\n│                       |")
 sleep(3)
 
