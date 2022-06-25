@@ -65,12 +65,32 @@ if question == 1:
     question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " + Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ")
     if question == "старт":   
         while True:
-            for i in range(4):
-                print("│       ●     ●       ● |\n│ ●               ●     |")
-                print("│                  ●    |\n│  ●   ●              ● |")
-                print("│         ●    ●        |\n│    ●        ●      ●  |")
-                print("│   ●   ●              ●|\n│●              ●       |")
-                print("│     ●      ●          |\n│     ●    ●         ●  |")
-                print("│●         ●      ●     |\n│  ●     ●        ●    ●|")
+            for i in range(10):
+                rand = randint(0,2)
+                if rand == 0:
+                    print("│       ●               |\n│ ●               ●     |")
+                    print("│                       |\n│                     ● |")
+                    print("│              ●        |\n│             ●         |")
+                    print("│   ●                   |\n│                       |")
+                    print("│            ●          |\n│                    ●  |")
+                    print("│                       |\n│        ●              |")
+                    sleep(0.25)
+                elif rand == 1:
+                    print("│                  ●    |\n│       ●             ● |")
+                    print("│     ●                 |\n│             ●         |")
+                    print("│                     ● |\n│                       |")
+                    print("│               ●       |\n│●                      |")
+                    print("│    ●                  |\n│                    ●  |")
+                    print("│          ●            |\n│     ●                 |")
+                    sleep(0.25)
+                elif rand == 2:
+                    print("│       ●               |\n│●               ●      |") 
+                    print("│                       |\n│         ●             |")
+                    print("│●                ●     |\n│  ●         ●          |")                                       
+                    print("│          ●            |\n│                  ●    |")
+                    print("│                  ●    |\n│                       |")
+                    print("│       ●               |\n│ ●               ●     |")
+                    sleep(0.25)
+            break
 sleep(3)
 
