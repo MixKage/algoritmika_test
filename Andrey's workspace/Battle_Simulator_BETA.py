@@ -5,15 +5,18 @@ from time import sleep
 # en == enemy
 # at == attack (damage)
 # def == defense (defend)
+# diff == difficulty
 
 en_health = 100
 health = 100
 en_at = 30
-at = 20
+at = 30
 healing = 10
+en_healing = 10
 en_is_def = 'false'
 is_def = 'false'
 do = 'basic'
+diff = 'basic'
 total_defences = 0
 total_attacks = 0
 total_heals = 0
@@ -47,13 +50,17 @@ def heal(health):
     health += healing
     return health
 
-lang = input('Please choose language (Rus, Eng):').lower()
+def en_heal(en_health):
+    en_health += en_healing
+    return en_health
+
+lang = input('Please, choose language (Rus, Eng):').lower()
 if contains(lang, 'eng'):
     print('Welcome to my new (python) project! And now it is...')
     sleep(2)
     print('The fighting game!')
     sleep(2)
-    input('Write something to start!')
+    diff = input('Choose difficulty level (baby, easy, normal, hard, insane, oh_god_please_no):')
     sleep(1)
     print('Enemy is approaching!')
 elif contains(lang, 'rus'):
@@ -61,9 +68,52 @@ elif contains(lang, 'rus'):
     sleep(2)
     print('Игру про сражения!')
     sleep(2)
-    input('Напишите что-нибудь, чтобы начать!')
+    diff = input('Выберите уровень сложности (baby, easy, normal, hard, insane, oh_god_please_no):')
     sleep(1)
     print('Враг наступает!')
+
+if diff == 'baby':
+    en_health = 1
+    health = 10000
+    en_at = 1
+    at = 3000
+    healing = 1000
+    en_healing = 1
+elif diff == 'easy':
+    en_health = 80
+    health = 100
+    en_at = 20
+    at = 30
+    healing = 10
+    en_healing = 10
+elif diff == 'normal':
+    en_health = 100
+    health = 100
+    en_at = 30
+    at = 30
+    healing = 10
+    en_healing = 10
+elif diff == 'hard':
+    en_health = 100
+    health = 80
+    en_at = 30
+    at = 20
+    healing = 10
+    en_healing = 10
+elif diff == 'insane':
+    en_health = 120
+    health = 80
+    en_at = 40
+    at = 20
+    healing = 10
+    en_healing = 20
+elif diff == 'oh_god_please_no':
+    en_health = 2000
+    health = 1
+    en_at = 500
+    at = 1
+    healing = 1
+    en_healing = 100
 
 
 while health != 0 and en_health != 0:
@@ -78,14 +128,14 @@ while health != 0 and en_health != 0:
         sleep(1)
         print('----------Статистика------------')
         sleep(1)
-        print(f'Твоя статистика: здоровье = {health}, атака = {at}, только ТЫ можешь восстановить {healing} hp.')
+        print(f'Твоя статистика: здоровье = {health}, атака = {at}, ты можешь восстановить {healing} hp.')
         sleep(0.5)
-        print(f'Статистика противника: здоровье = {en_health}, атака = {en_at}')
+        print(f'Статистика противника: здоровье = {en_health}, атака = {en_at}, может восстановить {en_healing} hp.')
         sleep(1)
         print('--------------------------------')
         sleep(1)
         # Enemy's round
-        rand = randint(1,2)
+        rand = randint(1,3)
         if rand == 2:
             en_defence(en_is_def)
             en_is_def = en_defence(en_is_def)
@@ -116,6 +166,10 @@ while health != 0 and en_health != 0:
             health = en_attack(health)
         elif rand == 2:
             print('Враг защищается!')
+        elif rand == 3:
+            print('Враг отдыхает.')
+            en_heal(en_health)
+            en_health = en_heal(en_health)
     elif contains(lang, 'eng'):
         print('--------------------------------')
         is_def = 'false'
@@ -125,14 +179,14 @@ while health != 0 and en_health != 0:
         sleep(1)
         print('-------------Stats--------------')
         sleep(1)
-        print(f'Your stats: health = {health}, attack = {at}, only YOU can heal {healing} hp.')
+        print(f'Your stats: health = {health}, attack = {at}, you can heal {healing} hp.')
         sleep(0.5)
-        print(f'Enemy stats: health = {en_health}, attack = {en_at}')
+        print(f'Enemy stats: health = {en_health}, attack = {en_at}, can heal {en_healing} hp.')
         sleep(1)
         print('--------------------------------')
         sleep(1)
         # Enemy's round
-        rand = randint(1,2)
+        rand = randint(1,3)
         if rand == 2:
             en_defence(en_is_def)
             en_is_def = en_defence(en_is_def)
@@ -163,6 +217,10 @@ while health != 0 and en_health != 0:
             health = en_attack(health)
         elif rand == 2:
             print('Enemy is defending!')
+        elif rand == 3:
+            print('Enemy is resting.')
+            en_heal(en_health)
+            en_health = en_heal(en_health)
 if contains(lang, 'eng'):
     if health <= 0:
         print('-----------You Lost!------------')
