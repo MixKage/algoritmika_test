@@ -2,6 +2,8 @@ from colorama import Fore, Back, Style
 from random import *
 from time import * 
 
+# Оh, colorama? - Andrey, Your opponent
+
 hp = 0
 lvl = 0
 coins = 0
@@ -70,6 +72,7 @@ if question == 1:
             var = 0
             for i in range(15):
                 rand = randint(0,20)
+                # WHAT. IS. THAT!?! - Andrey, Still your opponent
                 if rand == 0 or rand == 1:
                     sleep(0.5)
                     print("│       ●               |\n│ ●               ●     |")
@@ -150,3 +153,5 @@ if question == 1:
             break
 sleep(3)
 
+# hey, I dont think my game can compare to THIS - Andrey, Your opponent?
+# by the way, your game is pretty cool! - Just Andrey

@@ -1,3 +1,5 @@
+# Useless string.
+
 from random import randint
 from operator import contains
 from time import sleep
