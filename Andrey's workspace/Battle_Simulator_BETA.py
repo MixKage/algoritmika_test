@@ -265,7 +265,9 @@ elif contains(lang, 'rus'):
         print(f'Всего лечений (от тебя): {total_heals}')
 #        print(f'Damage taken (by you): {total_dem_taken}')
 #        print(f'Damage taken (by enemy): {total_en_dem_taken}')
-#        print(f'Damage taken (everybody): {total_dem}')
+#        print(f'Damage taken (everybody): {total_dem}')s
         print('--------------------------------')
     print('Спасибо за игру! Я не думаю, что эта игра будет популярной, но я всё ещё надеюсь, что она будет. Эта игра была сделана за 2 дня.')
     print('                                                                             - Андрей, Ведущий разработчик')
+
+# честно я поиграл минут 20, и как то суховато наверно не хватает что то типо драйва. надеюсь в будующем твоя игра станет лучше  - Максим
