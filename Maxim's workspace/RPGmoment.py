@@ -159,9 +159,8 @@ while question != 5:
         if question == "старт":
             print("\n"*50)   
             while True:
-                print("")
                 var = 0
-                for i in range(15):
+                for i in range(randint(8,15)):
                     first_location()
                     if i == 14:
                         print("\n\nМы дошли до поворота. \n")
