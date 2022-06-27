@@ -36,6 +36,92 @@ def starter_game_menu():
     print("\n"*50)
     return question
 
+def first_location():
+    global var
+    global coins
+    global damage
+    global hp
+    rand = randint(0,15)
+    if rand == 0:
+        sleep(0.5)
+        print("│       ●               |\n│ ●               ●     |")
+        print("│                       |\n│                     ● |")
+        print("│              ●        |\n│             ●         |")
+        print("│   ●                   |\n│                       |")
+        print("│            ●          |\n│                    ●  |")
+        print("│                       |\n│        ●              |")
+        sleep(0.5)
+    elif rand == 1:
+        sleep(0.5)
+        print("│                  ●    |\n│       ●             ● |")
+        print("│     ●                 |\n│             ●         |")
+        print("│                     ● |\n│                       |")
+        print("│               ●       |\n│●                      |")
+        print("│    ●                  |\n│                    ●  |")
+        print("│          ●            |\n│     ●                 |")   
+        sleep(0.5)
+    elif rand == 2:
+        sleep(0.5)
+        print("│       ●               |\n│●               ●      |") 
+        print("│                       |\n│         ●             |")
+        print("│●                ●     |\n│  ●         ●          |")                                       
+        print("│          ●            |\n│                  ●    |")
+        print("│                  ●    |\n│                       |")
+        print("│       ●               |\n│ ●               ●     |")
+        sleep(0.5)
+    elif rand >= 3 and rand <= 5:
+        sleep(0.5)
+        if var == 0:
+            print("│●                ●     |\n│  ●         ●          |")   
+            print("│                       |\n│         ●             |") 
+            print("│          " + Fore.BLUE + "○" + Fore.WHITE + "            |") 
+            print("│ ●       " + Fore.BLUE + "/" + Fore.WHITE + "       ●     |")                                  
+            print("│        " + Fore.BLUE + "/" + Fore.WHITE + "              |") 
+            print("│       " + Fore.BLUE + "/" + Fore.WHITE + "      ●        |")
+            print("│                  ●    |\n│                       |")
+            print("│       ●               |\n│●               ●      |")
+            sleep(0.5)
+            print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE+ " урона.   "); damage += 20
+            sleep(0.25)
+            print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
+            sleep(3)
+        elif var != 0:
+            sleep(0.5)
+        print("│                  ●    |\n│       ●             ● |")
+        print("│     ●                 |\n│             ●         |")
+        print("│                     ● |\n│                       |")
+        print("│               ●       |\n│●                      |")
+        print("│    ●                  |\n│                    ●  |")
+        print("│          ●            |\n│     ●                 |")   
+        sleep(0.5)
+        var = 1
+    elif rand >= 6 and rand <= 7:
+        sleep(0.5)
+        print("│                  ●    |\n│       ●             ● |")
+        print("│     ●                 |\n│             ●         |")
+        print("│                     ● |\n│                       |")
+        print("│               ●       |\n│●                      |")
+        print("│    ●                  |\n│                    ●  |")
+        print("│          ●            |\n│     ●                 |") 
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья.   "); hp -= 35
+        sleep(0.25)
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
+        sleep(3)
+    elif rand >= 8 and rand <= 10:
+        sleep(0.5)
+        print("│●                ●     |\n│  ●         ●          |")   
+        print("│                       |\n│         ●             |") 
+        print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "            |") 
+        print("│ ●              ●      |")                                  
+        print("│                       |") 
+        print("│                       |")
+        print("│                  ●    |\n│                       |")
+        print("│       ●               |\n│●               ●      |")
+        sleep(0.5)
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет.   "); coins += 25
+        sleep(0.25)
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет. \n└───────────────────────────┘\n")
+        sleep(3)
 
 def show_parameters():
     print(Fore.WHITE + "   ●  ├ У тебя         │\n      ├────────────────┤")
@@ -76,88 +162,7 @@ while question != 5:
                 print("")
                 var = 0
                 for i in range(15):
-                    rand = randint(0,15)
-                    # WHAT. IS. THAT!?! - Andrey, Still your opponent      это первая локация блин  - максим
-                    if rand == 0:
-                        sleep(0.5)
-                        print("│       ●               |\n│ ●               ●     |")
-                        print("│                       |\n│                     ● |")
-                        print("│              ●        |\n│             ●         |")
-                        print("│   ●                   |\n│                       |")
-                        print("│            ●          |\n│                    ●  |")
-                        print("│                       |\n│        ●              |")
-                        sleep(0.5)
-                    elif rand == 1:
-                        sleep(0.5)
-                        print("│                  ●    |\n│       ●             ● |")
-                        print("│     ●                 |\n│             ●         |")
-                        print("│                     ● |\n│                       |")
-                        print("│               ●       |\n│●                      |")
-                        print("│    ●                  |\n│                    ●  |")
-                        print("│          ●            |\n│     ●                 |")   
-                        sleep(0.5)
-                    elif rand == 2:
-                        sleep(0.5)
-                        print("│       ●               |\n│●               ●      |") 
-                        print("│                       |\n│         ●             |")
-                        print("│●                ●     |\n│  ●         ●          |")                                       
-                        print("│          ●            |\n│                  ●    |")
-                        print("│                  ●    |\n│                       |")
-                        print("│       ●               |\n│ ●               ●     |")
-                        sleep(0.5)
-                    elif rand >= 3 and rand <= 5:
-                        sleep(0.5)
-                        if var == 0:
-                            print("│●                ●     |\n│  ●         ●          |")   
-                            print("│                       |\n│         ●             |") 
-                            print("│          " + Fore.BLUE + "○" + Fore.WHITE + "            |") 
-                            print("│ ●       " + Fore.BLUE + "/" + Fore.WHITE + "       ●     |")                                  
-                            print("│        " + Fore.BLUE + "/" + Fore.WHITE + "              |") 
-                            print("│       " + Fore.BLUE + "/" + Fore.WHITE + "      ●        |")
-                            print("│                  ●    |\n│                       |")
-                            print("│       ●               |\n│●               ●      |")
-                            sleep(0.5)
-                            print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE+ " урона.   "); damage += 20
-                            sleep(0.25)
-                            print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
-                            sleep(3)
-                        elif var != 0:
-                            sleep(0.5)
-                        print("│                  ●    |\n│       ●             ● |")
-                        print("│     ●                 |\n│             ●         |")
-                        print("│                     ● |\n│                       |")
-                        print("│               ●       |\n│●                      |")
-                        print("│    ●                  |\n│                    ●  |")
-                        print("│          ●            |\n│     ●                 |")   
-                        sleep(0.5)
-                        var = 1
-                    elif rand >= 6 and rand <= 7:
-                        sleep(0.5)
-                        print("│                  ●    |\n│       ●             ● |")
-                        print("│     ●                 |\n│             ●         |")
-                        print("│                     ● |\n│                       |")
-                        print("│               ●       |\n│●                      |")
-                        print("│    ●                  |\n│                    ●  |")
-                        print("│          ●            |\n│     ●                 |") 
-                        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья.   │"); hp -= 35
-                        sleep(0.25)
-                        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья │\n└───────────────────────────┘\n")
-                        sleep(3)
-                    elif rand >= 8 and rand <= 10:
-                        sleep(0.5)
-                        print("│●                ●     |\n│  ●         ●          |")   
-                        print("│                       |\n│         ●             |") 
-                        print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "            |") 
-                        print("│ ●              ●      |")                                  
-                        print("│                       |") 
-                        print("│                       |")
-                        print("│                  ●    |\n│                       |")
-                        print("│       ●               |\n│●               ●      |")
-                        sleep(0.5)
-                        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет.   "); coins += 25
-                        sleep(0.25)
-                        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет. \n└───────────────────────────┘\n")
-                        sleep(3)
+                    first_location()
                     if i == 14:
                         print("\n\nМы дошли до поворота. \n")
                         sleep(0.5)
