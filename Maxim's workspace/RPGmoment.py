@@ -103,7 +103,7 @@ def first_location():
         print("│               ●       │\n│●                      │")
         print("│    ●                  │\n│                    ●  │")
         print("│          ●            │\n│     ●                 │") 
-        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья.   "); hp -= 35
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья   "); hp -= 35
         sleep(0.25)
         print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
         sleep(3)
@@ -118,9 +118,9 @@ def first_location():
         print("│                  ●    │\n│                       │")
         print("│       ●               │\n│●               ●      │")
         sleep(0.5)
-        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет.   "); coins += 25
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет   "); coins += 25
         sleep(0.25)
-        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет. \n└───────────────────────────┘\n")
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет \n└───────────────────────────┘\n")
         sleep(3)
 
 def show_parameters():
@@ -155,15 +155,15 @@ sleep(1)
 question = starter_game_menu()
 while question != 5:
     if question == 1:
-        iGame(randint(500,1000), 0, randint(0,250), randint(25,100), randint(0,150))
-        question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " + Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ")
+        iGame(randint(700,1000), 0, randint(0,100), randint(25,100), 0)
+        question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " + Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ").lower()
         if question == "старт":
             print("\n"*50)   
             while True:
                 var = 0
-                for i in range(15):
+                for i in range(5):
                     first_location()
-                    if i == 14:
+                    if i == 4:
                         print("\n"*50)
                         print("│          ╲    ╱           │")
                         print("│           ╲  ╱            │")
@@ -172,12 +172,18 @@ while question != 5:
                         print("│                           │")
                         print("│                           │")
                         print("│                           │")
-                        print("│                           │\n"*20)
+                        print("│                           │\n"*9)
+
+                        show_parameters()
+
                         print("\nМы дошли до поворота. \n")
+
                         sleep(0.5)
-                        print("├ Куда мы дальше отправимся?\n├────────────────────────┐\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
+
+                        print(Fore.WHITE + "\n├ Куда мы дальше отправимся?\n├────────────────────────┐\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
                         print("│ 2." + Fore.LIGHTCYAN_EX + " Деревня             " + Fore.WHITE + "│")
                         print("├────────────────────────┘")
+
                         question = int(input("│ Выбор: "))
                         break
     elif question == 2:
