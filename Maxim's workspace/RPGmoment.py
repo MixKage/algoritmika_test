@@ -161,9 +161,9 @@ while question != 5:
             print("\n"*50)   
             while True:
                 var = 0
-                for i in range(5):
+                for i in range(15):
                     first_location()
-                    if i == 4:
+                    if i == 14:
                         print("\n"*50)
                         print("│          ╲    ╱           │")
                         print("│           ╲  ╱            │")
@@ -172,19 +172,17 @@ while question != 5:
                         print("│                           │")
                         print("│                           │")
                         print("│                           │")
-                        print("│                           │\n"*9)
+                        print("│                           │\n"*8)
 
                         show_parameters()
 
-                        print("\nМы дошли до поворота. \n")
+                        print(Fore.WHITE + "\n┌────────────────────────┐\n├ Мы дошли до поворота.")
 
-                        sleep(0.5)
-
-                        print(Fore.WHITE + "\n├ Куда мы дальше отправимся?\n├────────────────────────┐\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
+                        print("│\n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
                         print("│ 2." + Fore.LIGHTCYAN_EX + " Деревня             " + Fore.WHITE + "│")
-                        print("├────────────────────────┘")
-
-                        question = int(input("│ Выбор: "))
+                        print("├────────────────────────┘")    
+                        sleep(1)
+                        question = int(input(Fore.WHITE +"│ " + Fore.BLACK + " ☦ " + Fore.WHITE + " От " + Fore.LIGHTRED_EX + " ВАС " + Fore.WHITE + " зависит " + Fore.LIGHTRED_EX + " ЕГО СУДЬБА: "))
                         break
     elif question == 2:
         print(Fore.LIGHTCYAN_EX + "Их пока нет.\n"*50)  
