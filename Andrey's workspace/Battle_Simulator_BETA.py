@@ -231,8 +231,6 @@ if contains(lang, 'eng'):
         print(f'Total attacks (by you): {total_attacks}')
         print(f'Total heals (by you): {total_heals}')
 #        print(f'Damage taken (by you): {total_dem_taken}')
-#        print(f'Damage taken (by enemy): {total_en_dem_taken}')
-#        print(f'Damage taken (everybody): {total_dem}')
         print('--------------------------------')
     elif en_health <= 0:
         print('-----------You Won!-------------')
@@ -241,8 +239,6 @@ if contains(lang, 'eng'):
         print(f'Total attacks (by you): {total_attacks}')
         print(f'Total heals (by you): {total_heals}')
 #        print(f'Damage taken (by you): {total_dem_taken}')
-#        print(f'Damage taken (by enemy): {total_en_dem_taken}')
-#        print(f'Damage taken (everybody): {total_dem}')
         print('--------------------------------')
     print('Thanks for playing! I dont think this game will be popular, but I still hope it will. This game was made in two days.')
     print('                                                                             - Andrey, Lead Developer')
@@ -254,8 +250,6 @@ elif contains(lang, 'rus'):
         print(f'Всего атак (от тебя): {total_attacks}')
         print(f'Всего лечений (от тебя): {total_heals}')
 #        print(f'Damage taken (by you): {total_dem_taken}')
-#        print(f'Damage taken (by enemy): {total_en_dem_taken}')
-#        print(f'Damage taken (everybody): {total_dem}')
         print('--------------------------------')
     elif en_health <= 0:
         print('----------Ты победил!-----------')
@@ -264,8 +258,6 @@ elif contains(lang, 'rus'):
         print(f'Всего атак (от тебя): {total_attacks}')
         print(f'Всего лечений (от тебя): {total_heals}')
 #        print(f'Damage taken (by you): {total_dem_taken}')
-#        print(f'Damage taken (by enemy): {total_en_dem_taken}')
-#        print(f'Damage taken (everybody): {total_dem}')s
         print('--------------------------------')
     print('Спасибо за игру! Я не думаю, что эта игра будет популярной, но я всё ещё надеюсь, что она будет. Эта игра была сделана за 2 дня.')
     print('                                                                             - Андрей, Ведущий разработчик')
