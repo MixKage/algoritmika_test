@@ -24,7 +24,7 @@ def logo():
     sleep(0.25)
     print("                                             _ _  _  _ _  _  _ _|_         ");sleep(0.25);print("                                            | | |(_)| | |(/_| | |          ")
     sleep(0.5)
-    print(f" ✉  version - {version}              ")
+    print(f"\n ✉  version - {version}" + Fore.GREEN + "\n   EVERYTHING IS SUBJECT TO CHANGE")
 
 def starter_game_menu():
     print(Fore.WHITE + "┌──────────────────────┐ \n├ 1. " + Fore.LIGHTCYAN_EX + "Играть" + Fore.WHITE + "            │")
