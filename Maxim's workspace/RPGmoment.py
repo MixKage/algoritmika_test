@@ -2,8 +2,7 @@ from colorama import Fore, Back, Style
 from random import *
 from time import * 
 import data_game
-
-# Оh, colorama? - Andrey, Your opponent
+import turtle
 
 version = "1betafl"
 
@@ -148,6 +147,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
     
     show_parameters()
 
+turtle.circle(100)
 logo()
 
 sleep(1)
@@ -190,6 +190,3 @@ while question != 5:
         print(Fore.LIGHTCYAN_EX + "1. Игра на одном дыхании сохранений нет.\n пока всё\n\n")             
     sleep(3)     
     question = starter_game_menu()            
-
-# hey, I dont think my game can compare to THIS - Andrey, Your opponent? teammate*
-# by the way, your game is pretty cool! - Just Andrey
