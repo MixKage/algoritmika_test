@@ -1,4 +1,4 @@
-from colorama import Fore, Style
+from colorama import *
 from random import *
 from time import *
 import data_game
@@ -49,29 +49,28 @@ def starter_game_menu():
 
 
 def road_generator():
-    road = '│ '
+    road = Fore.WHITE + '│ '
     for i in range(30):
-        rand = randint(0, 50)
+        rand = randint(0, 65)
         if rand == 14:
-            road += '⌓'
+            road += Fore.LIGHTBLACK_EX + '⌓'
         else:
-            road += ' '
-    road += ' │'
+            road += Fore.WHITE + ' '
+    road += Fore.WHITE + ' │'
     print(road)
 
 
 def first_location():
 
-    global true
     global coins
     global damage
     global hp
-    rand = randint(0,15)
+    rand = randint(0,12)
     
-    if rand == 8 and true != 1:
-        print("│ ⌓          " + Fore.BLUE + "/" + Fore.WHITE + "       ⌓           │")
+    if rand == 8:
+        print("│ " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "          " + Fore.BLUE + "/" + Fore.WHITE + "       " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "           │")
         print("│           " + Fore.BLUE + "/-" + Fore.WHITE + "                   │")
-        print("│          " + Fore.BLUE + "/" + Fore.WHITE + "      ⌓              │")
+        print("│          " + Fore.BLUE + "/" + Fore.WHITE + "      " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "              │")
         road_generator()
         print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE + " урона.   ")
         damage += 20
@@ -81,13 +80,13 @@ def first_location():
         true = 1
     elif rand == 3:
         sleep(0.5)
-        print("│                  ●    │\n│       ●             ● │")
-        print("│     ●                 │\n│             ●         │")
-        print("│                     ● │\n│                       │")
-        print("│               ●       │\n│●                      │")
-        print("│    ●                  │\n│                    ●  │")
-        print("│          ●            │\n│     ●                 │")
-        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья   "); hp -= 35
+        road_generator()
+        road_generator()
+        road_generator()
+        road_generator()
+        print("│     " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "         ⌒           " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "    │")
+        road_generator()
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы споткнулись об кочку и упали! " + Fore.LIGHTRED_EX + "-25" + Fore.WHITE+ " здоровья   "); hp -= 25
         sleep(0.25)
         print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
         sleep(3)
@@ -95,7 +94,7 @@ def first_location():
         sleep(0.5)
         road_generator()
         road_generator()
-        print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "           ⌓         │")
+        print("│          " + Fore.YELLOW + "℗" + Fore.WHITE + "           " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "         │")
         road_generator()
         road_generator()
         sleep(0.5)
@@ -116,20 +115,15 @@ def first_location():
 def show_parameters():
     print(Fore.WHITE + "   ●  ├ У тебя         │\n      ├────────────────┤")
     sleep(0.5)
-    print("   ○  ├ " + Fore.LIGHTRED_EX +
-          "{0}".format(lvl) + Fore.BLACK + " уровень\n      " + Fore.WHITE + "│")
+    print("   ○  ├ " + Fore.LIGHTRED_EX + "{0}".format(lvl) + Fore.BLACK + " уровень\n      " + Fore.WHITE + "│")
     sleep(0.5)
-    print("   ●  ├ " + Fore.LIGHTRED_EX +
-          "{0}".format(hp) + Fore.BLACK + " здоровья\n      " + Fore.WHITE + "│")
+    print("   ♥  ├ " + Fore.LIGHTRED_EX + "{0}".format(hp) + Fore.BLACK + " здоровья\n      " + Fore.WHITE + "│")
     sleep(0.5)
-    print(Fore.WHITE + "   ○  ├ " + Fore.LIGHTRED_EX +
-          "{0}".format(coins) + Fore.BLACK + " монеты\n      " + Fore.WHITE + "│")
+    print(Fore.WHITE + "   ℗  ├ " + Fore.LIGHTRED_EX + "{0}".format(coins) + Fore.BLACK + " монеты\n      " + Fore.WHITE + "│")
     sleep(0.5)
-    print(Fore.WHITE + "   ●  ├ " + Fore.LIGHTRED_EX +
-          "{0}".format(damage) + Fore.BLACK + " урон\n      " + Fore.WHITE + "│")
+    print(Fore.WHITE + "   ➹  ├ " + Fore.LIGHTRED_EX + "{0}".format(damage) + Fore.BLACK + " урон\n      " + Fore.WHITE + "│")
     sleep(0.5)
-    print(Fore.WHITE + "   ○  ├ " + Fore.LIGHTRED_EX +
-          "{0}".format(defense) + Fore.BLACK + " защита")
+    print(Fore.WHITE + "   ☯  ├ " + Fore.LIGHTRED_EX + "{0}".format(defense) + Fore.BLACK + " защита")
     sleep(0.5)
 
 
@@ -169,9 +163,9 @@ def main():
                             print("\n"*50)
                             show_parameters()
 
-                            print(Fore.WHITE + "\n┌────────────────────────┐\n├ На табличке написанно. Лес, Деревня")
+                            print(Fore.WHITE + "\n┌────────────────────────┐\n├ На табличке написанно.")
 
-                            print("│\n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
+                            print("│ ← Лес      ↑ Деревня \n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
                             print("│ 2." + Fore.LIGHTCYAN_EX + " Деревня             " + Fore.WHITE + "│")
                             print("├────────────────────────┘")
                             sleep(1)
