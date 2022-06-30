@@ -1,8 +1,7 @@
-from colorama import Fore, Back, Style
+from colorama import *
 from random import *
 from time import *
 import data_game
-import turtle
 
 version = "1betafl"
 
@@ -31,13 +30,11 @@ def logo():
     print(
         "                                            | | |(_)| | |(/_| | |          ")
     sleep(0.5)
-    print(f"\n ✉  version - {version}" + Fore.GREEN +
-          "\n   EVERYTHING IS SUBJECT TO CHANGE")
+    print(f"\n ✉  version - {version}" + Fore.GREEN + "\n   EVERYTHING IS SUBJECT TO CHANGE")
 
 
 def starter_game_menu():
-    print(Fore.WHITE + "┌──────────────────────┐ \n├ 1. " +
-          Fore.LIGHTCYAN_EX + "Играть" + Fore.WHITE + "            │")
+    print(Fore.WHITE + "┌──────────────────────┐ \n├ 1. " + Fore.LIGHTCYAN_EX + "Играть" + Fore.WHITE + "            │")
     print("├ 2. " + Fore.LIGHTCYAN_EX + "Настройки" + Fore.WHITE + "         │")
     print("├ 3. " + Fore.LIGHTCYAN_EX + "FAQ" + Fore.WHITE + "               │")
     print("├ 4. " + Fore.LIGHTCYAN_EX + "Прочее" + Fore.WHITE + "            │")
@@ -75,19 +72,14 @@ def first_location():
         road_generator()
         sleep(0.5)
     if rand == 8 and var != 1:
-        print("│ ⌓          " + Fore.BLUE + "/" +
-              Fore.WHITE + "       ⌓           │")
-        print("│           " + Fore.BLUE + "/-" +
-              Fore.WHITE + "                   │")
-        print("│          " + Fore.BLUE + "/" +
-              Fore.WHITE + "      ⌓              │")
+        print("│ ⌓          " + Fore.BLUE + "/" + Fore.WHITE + "       ⌓           │")
+        print("│           " + Fore.BLUE + "/-" + Fore.WHITE + "                   │")
+        print("│          " + Fore.BLUE + "/" + Fore.WHITE + "      ⌓              │")
         road_generator()
-        print("\n┌───────────────────────────┐" + Fore.WHITE +
-              "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE + " урона.   ")
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE + " урона.   ")
         damage += 20
         sleep(0.25)
-        print("│ Теперь у вас " + Fore.LIGHTRED_EX +
-              f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
         sleep(3)
         var = 1
     # if rand >= 5 and rand <= 6:
@@ -180,44 +172,38 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
     show_parameters()
 
 
-def __init__():
-    iGame()
-    logo()
 
-    sleep(1)
 
+logo()
+
+sleep(1)
+
+question = starter_game_menu()
+while question != 5:
+    if question == 1:
+        iGame(randint(700, 1000), 0, randint(0, 100), randint(25, 100), 0)
+        question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " + Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ").lower()
+        if question == "старт":
+            print("\n"*50)
+            while True:
+                var = 0
+                for i in range(15):
+                    first_location()
+                    if i == 14:
+                        print("\n"*50)
+                        show_parameters()
+
+                        print(Fore.WHITE + "\n┌────────────────────────┐\n├ Мы дошли до поворота.")
+
+                        print("│\n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
+                        print("│ 2." + Fore.LIGHTCYAN_EX + " Деревня             " + Fore.WHITE + "│")
+                        print("├────────────────────────┘")
+                        sleep(1)
+                        question = int(input(Fore.WHITE + "│ " + Fore.BLACK + " ☦ " + Fore.WHITE + " От " + Fore.LIGHTRED_EX + " ВАС " + Fore.WHITE + " зависит " + Fore.LIGHTRED_EX + " ЕГО СУДЬБА: "))
+                        break
+    elif question == 2:
+        print(Fore.LIGHTCYAN_EX + "Их пока нет.\n"*50)
+    elif question == 3:
+        print(Fore.LIGHTCYAN_EX + "1. Игра на одном дыхании сохранений нет.\n пока всё\n\n")
+    sleep(3)
     question = starter_game_menu()
-    while question != 5:
-        if question == 1:
-            iGame(randint(700, 1000), 0, randint(0, 100), randint(25, 100), 0)
-            question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " +
-                             Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ").lower()
-            if question == "старт":
-                print("\n"*50)
-                while True:
-                    var = 0
-                    for i in range(15):
-                        first_location()
-                        if i == 14:
-                            print("\n"*50)
-                            show_parameters()
-
-                            print(
-                                Fore.WHITE + "\n┌────────────────────────┐\n├ Мы дошли до поворота.")
-
-                            print("│\n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." +
-                                  Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
-                            print("│ 2." + Fore.LIGHTCYAN_EX +
-                                  " Деревня             " + Fore.WHITE + "│")
-                            print("├────────────────────────┘")
-                            sleep(1)
-                            question = int(input(Fore.WHITE + "│ " + Fore.BLACK + " ☦ " + Fore.WHITE + " От " +
-                                                 Fore.LIGHTRED_EX + " ВАС " + Fore.WHITE + " зависит " + Fore.LIGHTRED_EX + " ЕГО СУДЬБА: "))
-                            break
-        elif question == 2:
-            print(Fore.LIGHTCYAN_EX + "Их пока нет.\n"*50)
-        elif question == 3:
-            print(Fore.LIGHTCYAN_EX +
-                  "1. Игра на одном дыхании сохранений нет.\n пока всё\n\n")
-        sleep(3)
-        question = starter_game_menu()
