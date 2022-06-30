@@ -1,4 +1,4 @@
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 from random import *
 from time import *
 import data_game
@@ -62,7 +62,7 @@ def road_generator():
 
 def first_location():
 
-    global var
+    global true
     global coins
     global damage
     global hp
@@ -74,7 +74,7 @@ def first_location():
         road_generator()
         road_generator()
         sleep(0.5)
-    if rand == 8 and var != 1:
+    if rand == 8 and true != 1:
         print("│ ⌓          " + Fore.BLUE + "/" +
               Fore.WHITE + "       ⌓           │")
         print("│           " + Fore.BLUE + "/-" +
@@ -89,7 +89,7 @@ def first_location():
         print("│ Теперь у вас " + Fore.LIGHTRED_EX +
               f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
         sleep(3)
-        var = 1
+        true = 1
     # if rand >= 5 and rand <= 6:
     #     sleep(0.5)
     #     if var == 0:
@@ -194,7 +194,7 @@ def main():
             if question == "старт":
                 print("\n"*50)
                 while True:
-                    var = 0
+                    true = 0
                     for i in range(15):
                         first_location()
                         if i == 14:
