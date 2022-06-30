@@ -63,14 +63,8 @@ def first_location():
     global coins
     global damage
     global hp
-    rand = 8
-    for i in range(5):
-        road_generator()
-        road_generator()
-        road_generator()
-        road_generator()
-        road_generator()
-        sleep(0.5)
+    rand = randint(0,15)
+    
     if rand == 8 and var != 1:
         print("│ ⌓          " + Fore.BLUE + "/" + Fore.WHITE + "       ⌓           │")
         print("│           " + Fore.BLUE + "/-" + Fore.WHITE + "                   │")
@@ -82,59 +76,40 @@ def first_location():
         print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
         sleep(3)
         var = 1
-    # if rand >= 5 and rand <= 6:
-    #     sleep(0.5)
-    #     if var == 0:
-    #         print("│●                ●     │\n│  ●         ●          │")
-    #         print("│                       │\n│         ●             │")
-    #         print("│                       │")
-    #         print("│ ●       " + Fore.BLUE + "/" + Fore.WHITE + "       ●     │")
-    #         print("│        " + Fore.BLUE + "/-" + Fore.WHITE + "             │")
-    #         print("│       " + Fore.BLUE + "/" + Fore.WHITE + "      ●        │")
-    #         print("│                  ●    │\n│                       │")
-    #         print("│       ●               │\n│●               ●      │")
-    #         sleep(0.5)
-    #         print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE+ " урона.   "); damage += 20
-    #         sleep(0.25)
-    #         print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
-    #         sleep(3)
-    #         var = 1
-    #     elif var != 0:
-    #         sleep(0.5)
-    #         print("│                  ●    │\n│       ●             ● │")
-    #         print("│     ●                 │\n│             ●         │")
-    #         print("│                     ● │\n│                       │")
-    #         print("│               ●       │\n│●                      │")
-    #         print("│    ●                  │\n│                    ●  │")
-    #         print("│          ●            │\n│     ●                 │")
-    #         sleep(0.5)
-    # elif rand == 7:
-    #     sleep(0.5)
-    #     print("│                  ●    │\n│       ●             ● │")
-    #     print("│     ●                 │\n│             ●         │")
-    #     print("│                     ● │\n│                       │")
-    #     print("│               ●       │\n│●                      │")
-    #     print("│    ●                  │\n│                    ●  │")
-    #     print("│          ●            │\n│     ●                 │")
-    #     print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья   "); hp -= 35
-    #     sleep(0.25)
-    #     print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
-    #     sleep(3)
-    # elif rand == 8:
-    #     sleep(0.5)
-    #     print("│●                ●     │\n│  ●         ●          │")
-    #     print("│                       │\n│         ●             │")
-    #     print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "            │")
-    #     print("│ ●              ●      │")
-    #     print("│                       │")
-    #     print("│                       │")
-    #     print("│                  ●    │\n│                       │")
-    #     print("│       ●               │\n│●               ●      │")
-    #     sleep(0.5)
-    #     print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет   "); coins += 25
-    #     sleep(0.25)
-    #     print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет \n└───────────────────────────┘\n")
-    #     sleep(3)
+    elif rand == 1:
+        sleep(0.5)
+        print("│                  ●    │\n│       ●             ● │")
+        print("│     ●                 │\n│             ●         │")
+        print("│                     ● │\n│                       │")
+        print("│               ●       │\n│●                      │")
+        print("│    ●                  │\n│                    ●  │")
+        print("│          ●            │\n│     ●                 │")
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья   "); hp -= 35
+        sleep(0.25)
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
+        sleep(3)
+    elif rand == 3:
+        sleep(0.5)
+        print("│●                ●     │\n│  ●         ●          │")
+        print("│                       │\n│         ●             │")
+        print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "            │")
+        print("│ ●              ●      │")
+        print("│                       │")
+        print("│                       │")
+        print("│                  ●    │\n│                       │")
+        print("│       ●               │\n│●               ●      │")
+        sleep(0.5)
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет   "); coins += 25
+        sleep(0.25)
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет \n└───────────────────────────┘\n")
+        sleep(3)
+    else:
+        for i in range(5):
+            road_generator()
+            road_generator()
+            road_generator()
+            road_generator()
+            sleep(0.5)
 
 
 def show_parameters():
