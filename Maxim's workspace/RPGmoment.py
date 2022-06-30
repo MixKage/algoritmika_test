@@ -180,8 +180,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
     show_parameters()
 
 
-def __init__():
-    iGame()
+def main():
     logo()
 
     sleep(1)
@@ -221,3 +220,7 @@ def __init__():
                   "1. Игра на одном дыхании сохранений нет.\n пока всё\n\n")
         sleep(3)
         question = starter_game_menu()
+
+
+if __name__ == '__main__':
+    main()
