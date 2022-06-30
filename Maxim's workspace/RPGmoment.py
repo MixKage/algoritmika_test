@@ -66,83 +66,51 @@ def first_location():
     global coins
     global damage
     global hp
-    rand = 8
-    for i in range(5):
+    rand = randint(0,15)
+    
+    if rand == 8 and true != 1:
+        print("│ ⌓          " + Fore.BLUE + "/" + Fore.WHITE + "       ⌓           │")
+        print("│           " + Fore.BLUE + "/-" + Fore.WHITE + "                   │")
+        print("│          " + Fore.BLUE + "/" + Fore.WHITE + "      ⌓              │")
+        road_generator()
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE + " урона.   ")
+        damage += 20
+        sleep(0.25)
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
+        sleep(3)
+        true = 1
+    elif rand == 3:
+        sleep(0.5)
+        print("│                  ●    │\n│       ●             ● │")
+        print("│     ●                 │\n│             ●         │")
+        print("│                     ● │\n│                       │")
+        print("│               ●       │\n│●                      │")
+        print("│    ●                  │\n│                    ●  │")
+        print("│          ●            │\n│     ●                 │")
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья   "); hp -= 35
+        sleep(0.25)
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
+        sleep(3)
+    elif rand == 1:
+        sleep(0.5)
         road_generator()
         road_generator()
-        road_generator()
+        print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "           ⌓         │")
         road_generator()
         road_generator()
         sleep(0.5)
-    if rand == 8 and true != 1:
-        print("│ ⌓          " + Fore.BLUE + "/" +
-              Fore.WHITE + "       ⌓           │")
-        print("│           " + Fore.BLUE + "/-" +
-              Fore.WHITE + "                   │")
-        print("│          " + Fore.BLUE + "/" +
-              Fore.WHITE + "      ⌓              │")
-        road_generator()
-        print("\n┌───────────────────────────┐" + Fore.WHITE +
-              "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE + " урона.   ")
-        damage += 20
+        print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет   "); coins += 25
         sleep(0.25)
-        print("│ Теперь у вас " + Fore.LIGHTRED_EX +
-              f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
+        print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет \n└───────────────────────────┘\n")
         sleep(3)
-        true = 1
-    # if rand >= 5 and rand <= 6:
-    #     sleep(0.5)
-    #     if var == 0:
-    #         print("│●                ●     │\n│  ●         ●          │")
-    #         print("│                       │\n│         ●             │")
-    #         print("│                       │")
-    #         print("│ ●       " + Fore.BLUE + "/" + Fore.WHITE + "       ●     │")
-    #         print("│        " + Fore.BLUE + "/-" + Fore.WHITE + "             │")
-    #         print("│       " + Fore.BLUE + "/" + Fore.WHITE + "      ●        │")
-    #         print("│                  ●    │\n│                       │")
-    #         print("│       ●               │\n│●               ●      │")
-    #         sleep(0.5)
-    #         print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE+ " урона.   "); damage += 20
-    #         sleep(0.25)
-    #         print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{damage}" + Fore.WHITE + " урона \n└───────────────────────────┘\n")
-    #         sleep(3)
-    #         var = 1
-    #     elif var != 0:
-    #         sleep(0.5)
-    #         print("│                  ●    │\n│       ●             ● │")
-    #         print("│     ●                 │\n│             ●         │")
-    #         print("│                     ● │\n│                       │")
-    #         print("│               ●       │\n│●                      │")
-    #         print("│    ●                  │\n│                    ●  │")
-    #         print("│          ●            │\n│     ●                 │")
-    #         sleep(0.5)
-    # elif rand == 7:
-    #     sleep(0.5)
-    #     print("│                  ●    │\n│       ●             ● │")
-    #     print("│     ●                 │\n│             ●         │")
-    #     print("│                     ● │\n│                       │")
-    #     print("│               ●       │\n│●                      │")
-    #     print("│    ●                  │\n│                    ●  │")
-    #     print("│          ●            │\n│     ●                 │")
-    #     print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы упали! " + Fore.LIGHTRED_EX + "-35" + Fore.WHITE+ " здоровья   "); hp -= 35
-    #     sleep(0.25)
-    #     print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{hp}" + Fore.WHITE + " здоровья \n└───────────────────────────┘\n")
-    #     sleep(3)
-    # elif rand == 8:
-    #     sleep(0.5)
-    #     print("│●                ●     │\n│  ●         ●          │")
-    #     print("│                       │\n│         ●             │")
-    #     print("│          " + Fore.YELLOW + "○" + Fore.WHITE + "            │")
-    #     print("│ ●              ●      │")
-    #     print("│                       │")
-    #     print("│                       │")
-    #     print("│                  ●    │\n│                       │")
-    #     print("│       ●               │\n│●               ●      │")
-    #     sleep(0.5)
-    #     print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Монету! " + Fore.LIGHTRED_EX + "+25" + Fore.WHITE+ " монет   "); coins += 25
-    #     sleep(0.25)
-    #     print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет \n└───────────────────────────┘\n")
-    #     sleep(3)
+    else:
+        for i in range(5):
+            road_generator()
+            road_generator()
+            road_generator()
+            road_generator()
+            road_generator()
+            sleep(0.5)
 
 
 def show_parameters():
@@ -201,17 +169,13 @@ def main():
                             print("\n"*50)
                             show_parameters()
 
-                            print(
-                                Fore.WHITE + "\n┌────────────────────────┐\n├ Мы дошли до поворота.")
+                            print(Fore.WHITE + "\n┌────────────────────────┐\n├ На табличке написанно. Лес, Деревня")
 
-                            print("│\n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." +
-                                  Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
-                            print("│ 2." + Fore.LIGHTCYAN_EX +
-                                  " Деревня             " + Fore.WHITE + "│")
+                            print("│\n├ Куда мы дальше отправимся?\n├────────────────────────┤\n│ 1." + Fore.LIGHTCYAN_EX + " Леc                 " + Fore.WHITE + "│")
+                            print("│ 2." + Fore.LIGHTCYAN_EX + " Деревня             " + Fore.WHITE + "│")
                             print("├────────────────────────┘")
                             sleep(1)
-                            question = int(input(Fore.WHITE + "│ " + Fore.BLACK + " ☦ " + Fore.WHITE + " От " +
-                                                 Fore.LIGHTRED_EX + " ВАС " + Fore.WHITE + " зависит " + Fore.LIGHTRED_EX + " ЕГО СУДЬБА: "))
+                            question = int(input(Fore.WHITE + "│ " + Fore.BLACK + " ☦ " + Fore.WHITE + " От " + Fore.LIGHTRED_EX + " ВАС " + Fore.WHITE + " зависит " + Fore.LIGHTRED_EX + " ЕГО СУДЬБА: "))
                             break
         elif question == 2:
             print(Fore.LIGHTCYAN_EX + "Их пока нет.\n"*50)
