@@ -1,6 +1,7 @@
 from colorama import Fore, Back, Style
 from random import *
 from time import * 
+import data_game
 
 # Оh, colorama? - Andrey, Your opponent
 
@@ -150,7 +151,6 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
 logo()
 
 sleep(1)
-
 
 question = starter_game_menu()
 while question != 5:
