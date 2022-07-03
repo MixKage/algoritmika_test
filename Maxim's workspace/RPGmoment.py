@@ -2,6 +2,7 @@ from colorama import *
 from random import *
 from time import *
 import data_game
+import sound_play
 import turtle
 
 version = "1betafl"
@@ -143,6 +144,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
 
 
 def main():
+    #sound_play.first_music()
     logo()
 
     sleep(1)
