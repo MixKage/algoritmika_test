@@ -195,7 +195,6 @@ while True:
 
     elif poss1 == -4 and poss2 == 2:
         if boss1_won == 'false':
-            playsound('C:/Users/user/Desktop/Projects/algoritmika_test/Andreys workspace/Battle_Simulator_BETA/Milky_Ways.mp3', False)
             print('--------------------------------')
             print('Something powerful is coming...')
             sleep(6)
