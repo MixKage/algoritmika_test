@@ -1,4 +1,3 @@
-from ast import While
 from colorama import *
 from random import *
 from time import *
@@ -156,7 +155,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
 
 
 def main():
-    # sound_play.first_music()
+    #sound_play.first_music()
     logo()
 
     sleep(1)
