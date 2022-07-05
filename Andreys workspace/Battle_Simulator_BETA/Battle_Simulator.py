@@ -31,6 +31,7 @@ battles_won = 0
 sword1_taken = 'false'
 armor1_taken = 'false'
 boss1_won = 'false'
+boss1_lost = 'false'
 
 def attack(en_health):
     if en_is_def == 'true':
@@ -129,7 +130,7 @@ elif diff == 'oh_god_please_no':
     xp_ganing = 'you are hacking'
 
 while True:
-    if boss1_won == 'true':
+    if boss1_won == 'true' or boss1_lost == 'true':
         break
     if diff == 'baby':
         en_health = 1
@@ -195,8 +196,9 @@ while True:
 
     elif poss1 == -4 and poss2 == 2:
         if boss1_won == 'false':
+            playsound('C:/Users/user/Desktop/Projects/algoritmika_test/Andreys workspace/Battle_Simulator_BETA/Milky_Ways.mp3', False)
             print('--------------------------------')
-            print('Something powerful is coming...')
+            print('Something powerfull is coming...')
             sleep(6)
             print('Beter get ready...')
             sleep(10)
@@ -261,6 +263,7 @@ while True:
                     en_heal(en_health)
                     en_health = en_heal(en_health)
                 if health <= 0:
+                    boss1_lost = 'true'
                     print('-----------You Lost!------------')
                     print('Ganed xp: 0')
                     print('---------Funny Stats:-----------')
@@ -392,5 +395,9 @@ while True:
             diff = input('Choose difficulty level (baby, easy, normal, hard, insane, oh_god_please_no):')
             print('--------------------------------')
 
-print('Congrats! You beat the game!')
+
+if boss1_won == 'true':
+    print('Congrats! You beat the game!')
+elif boss1_lost == 'true':
+    print('You lost! :(')
 input('')
