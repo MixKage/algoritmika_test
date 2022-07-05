@@ -14,6 +14,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+money = 0
 sleep(3)
 print('добро пожаловать в игру желаете узнать как играть?')
 answer_1 = input('')
@@ -56,24 +57,52 @@ if answer_1 == 'да':
 else:
     print("добро пожаловать!")
 print('и так чем займемся?')
-print("здоровье -", health,"урон -", damage ,"голод -", hungry)
-print("walk - гулять shop - магазин war - битва с бингусами level_up - прокачка шлёпы")
-answer_3 = input('')
-if answer_3 == 'walk':
-    luck = randint(1, 10)
-    if luck == 5:
-        print("Удача вы нашли пельмень! +5 монет")
-        print('и так чем займемся?')
-        print("здоровье -", health,"урон -", damage ,"голод -", hungry)
-        print("walk - гулять shop - магазин war - битва с бингусами level_up - прокачка шлёпы")
-        answer_3 = input('')
-    else:
-        print('Вы прогулялись и потратили 10 голода')
-        hungry -= 10
-        print('и так чем займемся?')
-        print("здоровье -", health,"урон -", damage ,"голод -", hungry)
-        print("walk - гулять shop - магазин war - битва с бингусами level_up - прокачка шлёпы")
-        answer_3 = input('')
+while True:
+    print("здоровье -", health,"урон -", damage ,"голод -", hungry, "монеты -", money)
+    print("walk - гулять shop - магазин war - битва с бингусами level_up - прокачка шлёпы")
+    answer_3 = input('')
+    if answer_3 == 'walk':
+        luck = randint(1, 10)
+        if luck == 5:
+            print("Удача вы нашли пельмень! +5 монет и потратили 10 голода")
+            hungry -= 10
+            money += 5
+        else:
+            print('Вы прогулялись и потратили 10 голода')
+            hungry -= 10
+    elif answer_3 == 'shop':
+        print("Добро пожаловать магазин что хотите купить?")
+        print("1 -Еда шлёпы (+ 50 голода) - 2 монеты")
+        print("2 -Меч шлёпы (+10 урона) - 10 монет")
+        print("3 -Броня шлёпы (+100 хп) - 20 монет")
+        print("В будующем будет больше!")
+        answer_4 = input("Что хотите купить (off - выйти)")
+        if answer_4 == '1':
+            if money >= 2:
+                money -= 2
+                hungry += 50
+            else:
+                print("Недостаточно средств!")
+        elif answer_4 == '2':
+            if money >= 10:
+                money -= 10
+                damage += 10
+            else:
+                print("Недостаточно средств!")
+        elif answer_4 == '3':
+            if money >= 20:
+                money -= 20
+                health += 100
+            else:
+                print("Недостаточно средств!")
+        else:
+            print("Выход...")
+            sleep(3)
+        
+
+
+            
+            
 
 
 
