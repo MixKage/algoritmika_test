@@ -1,3 +1,4 @@
+from ast import While
 from colorama import *
 from random import *
 from time import *
@@ -12,7 +13,7 @@ lvl = 0
 coins = 0
 damage = 0
 defense = 0
-
+location = 0
 
 def logo():
     print(Fore.WHITE + "                                                                           ")
@@ -37,8 +38,7 @@ def logo():
 
 
 def starter_game_menu():
-    print(Fore.WHITE + "┌──────────────────────┐ \n├ 1. " +
-          Fore.LIGHTCYAN_EX + "Играть" + Fore.WHITE + "            │")
+    print(Fore.WHITE + "┌──────────────────────┐ \n├ 1. " + Fore.LIGHTCYAN_EX + "Играть" + Fore.WHITE + "            │")
     print("├ 2. " + Fore.LIGHTCYAN_EX + "Настройки" + Fore.WHITE + "         │")
     print("├ 3. " + Fore.LIGHTCYAN_EX + "FAQ" + Fore.WHITE + "               │")
     print("├ 4. " + Fore.LIGHTCYAN_EX + "Прочее" + Fore.WHITE + "            │")
@@ -49,7 +49,7 @@ def starter_game_menu():
     return question
 
 
-def road_generator():
+def road_generator(): # Генератор, Спасибо MixKage
     road = Fore.WHITE + '│ '
     for i in range(30):
         rand = randint(0, 65)
@@ -61,17 +61,20 @@ def road_generator():
     print(road)
 
 
-def first_location():
-
+def first_location(): # Первая локация, 5 монстров
+    global location; location = 1
     global coins
     global damage
     global hp
     rand = randint(0,12)
     
     if rand == 8:
+        road_generator()
+        road_generator()
         print("│ " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "          " + Fore.BLUE + "/" + Fore.WHITE + "       " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "           │")
         print("│           " + Fore.BLUE + "/-" + Fore.WHITE + "                   │")
         print("│          " + Fore.BLUE + "/" + Fore.WHITE + "      " + Fore.LIGHTBLACK_EX + "⌓" + Fore.WHITE + "              │")
+        road_generator()
         road_generator()
         print("\n┌───────────────────────────┐" + Fore.WHITE + "\n│ Вы нашли Палку! " + Fore.LIGHTRED_EX + "+20" + Fore.WHITE + " урона.   ")
         damage += 20
@@ -103,6 +106,8 @@ def first_location():
         sleep(0.25)
         print("│ Теперь у вас " + Fore.LIGHTRED_EX + f"{coins}" + Fore.WHITE + " монет \n└───────────────────────────┘\n")
         sleep(3)
+    elif rand == 12:
+        battle()
     else:
         for i in range(5):
             road_generator()
@@ -112,6 +117,13 @@ def first_location():
             road_generator()
             sleep(0.5)
 
+def battle():
+    if location == 1:
+        rand = randint(0, 5)
+        sleep(2)
+        if rand >= 0 and rand <= 5: # Волк
+            print("\n┌──────────────────────┐\n├ Вы встретили " + Fore.LIGHTRED_EX + f"{data_game.location1_monsters[0]}") 
+            print(Fore.WHITE +f"├ ○ {Fore.LIGHTRED_EX+data_game.wolf[1]}"+Fore.WHITE+f"  ♥ {Fore.LIGHTRED_EX+data_game.wolf[0]}"+Fore.WHITE+f"  ➹ {Fore.LIGHTRED_EX+data_game.wolf[2]}\n")
 
 def show_parameters():
     print(Fore.WHITE + "   ●  ├ У тебя         │\n      ├────────────────┤")
@@ -124,7 +136,7 @@ def show_parameters():
     sleep(0.5)
     print(Fore.WHITE + "   ➹  ├ " + Fore.LIGHTRED_EX + "{0}".format(damage) + Fore.BLACK + " урон\n      " + Fore.WHITE + "│")
     sleep(0.5)
-    print(Fore.WHITE + "   ☯  ├ " + Fore.LIGHTRED_EX + "{0}".format(defense) + Fore.BLACK + " защита")
+    print(Fore.WHITE + "   ☯  ├ " + Fore.LIGHTRED_EX + "{0}%".format(defense) + Fore.BLACK + " защита")
     sleep(0.5)
 
 
@@ -144,7 +156,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
 
 
 def main():
-    #sound_play.first_music()
+    # sound_play.first_music()
     logo()
 
     sleep(1)
@@ -152,7 +164,7 @@ def main():
     question = starter_game_menu()
     while question != 5:
         if question == 1:
-            iGame(randint(700, 1000), 0, randint(0, 100), randint(25, 100), 0)
+            iGame(randint(700, 1000), 0, randint(0, 100), randint(25, 100), randint(0, 50))
             question = input(Fore.WHITE + "──────┼───────────────────────────────────\n   ➱  │ ВВЕДИТЕ " +
                              Fore.LIGHTRED_EX + Style.DIM + "СТАРТ" + Fore.WHITE + Style.NORMAL + " ДЛЯ НАЧАЛА: ").lower()
             if question == "старт":
