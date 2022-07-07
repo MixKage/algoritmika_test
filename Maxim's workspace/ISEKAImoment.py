@@ -11,7 +11,7 @@ damage = 0
 defense = 0
 location = 0
 
-def logo():
+# def logo_old():
     # print("\n"+" "*26+"_/_/_/    _/_/_/      _/_/_/")
     # sleep(0.25)
     # print(" "*25+"_/    _/  _/    _/  _/")
@@ -25,11 +25,11 @@ def logo():
     # print(" "*23+"_ _  _  _ _  _  _ _|_")
     # sleep(0.25)
     # print(" "*22+f"| | |(_)| | |(/_| | |  ✉  {Fore.LIGHTRED_EX+version}")
-    print(f"\n{logo_text}\n\n ✉  {Fore.LIGHTRED_EX+version}"); sleep(0.25)
+    
 
 
 def starter_game_menu():
-    print(f"{Fore.WHITE}{DRAWline(1,27)}\n├ 1.{Fore.LIGHTCYAN_EX} Играть{Fore.WHITE}                 │")
+    print(f"{Fore.WHITE}{DRAWline(1,27)}\n├ 1. {Fore.LIGHTCYAN_EX}Играть{Fore.WHITE}                 │")
     print(f"├ 2. {Fore.LIGHTCYAN_EX}Настройки{Fore.WHITE}              │")
     print(f"├ 3. {Fore.LIGHTCYAN_EX}FAQ{Fore.WHITE}                    │")
     print(f"├ 4. {Fore.LIGHTCYAN_EX}История{Fore.WHITE}                │")
@@ -89,7 +89,7 @@ def first_location(): # Первая локация, 5 монстров
             road_generator(5)
             sleep(0.4)
 
-def battle():
+def battle(): #битва
     if location == 1:
         rand = randint(0, 5) 
         sleep(2)
@@ -109,7 +109,7 @@ def battle():
                     print(f"{Fore.WHITE}      │\n      │ {Fore.CYAN} Неудача!")
                     sound_play.failure_sound(False); sleep(2)
 
-def show_parameters():
+def show_parameters(): # статы
     print(f"{Fore.WHITE}   ●  ├ У тебя         │\n      ├────────────────┤")
     sleep(0.5)
     print(f"   ○  ├ {Fore.LIGHTRED_EX}{lvl}{Fore.BLACK} уровень\n      {Fore.WHITE}│")
@@ -124,7 +124,7 @@ def show_parameters():
     sleep(0.5)
 
 
-def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
+def iGame(iHp, iLvl, iCoins, iDMG, iDEF): # инициальзация
     global hp; hp = iHp
     global lvl; lvl = iLvl
     global coins; coins = iCoins
@@ -135,7 +135,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
 
 
 def main():
-    sound_play.first_music(False)
+    #sound_play.first_music(False)
     logo()
 
     sleep(1)

@@ -2,8 +2,8 @@ from playsound import playsound
 
 
 def first_music(bool):
-    playsound("Maxim's workspace\Sounds\Milky_Ways.mp3", bool)
+    playsound("Maxim's workspace\\Sounds\\Milky_Ways.mp3", bool)
 def failure_sound(bool):
-    playsound("Sounds\\failure.wav", bool)
+    playsound("Maxim's workspace\\Sounds\\failure.wav", bool)
 def success_sound(bool):
-    playsound("Sounds\\success.wav", bool)
+    playsound("Maxim's workspace\\Sounds\\success.wav", bool)

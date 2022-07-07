@@ -1,3 +1,6 @@
+from time import *
+from colorama import Fore
+
 logo_text = """
 ████████████████████████████████████████████
 █      █    █     █  ███   █       █      ██
@@ -36,6 +39,8 @@ def DRAWline(mark, sym):
         line += "┘"
     return line
 
+def logo():
+    print(f"\n{logo_text}\n\n ✉  {Fore.LIGHTRED_EX+version}"); sleep(0.25)
 
 # GAME GAME GAME GAME GAME GAME GAME GAME GAME GAME GAME GAME 
 weapons = ["sword", "bow", "longsword", "battle axe"]
