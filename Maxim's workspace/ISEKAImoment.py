@@ -95,19 +95,19 @@ def battle():
         sleep(2)
         if rand >= 0 and rand <= 5: # Волк
             print(f"\n{DRAWline(1,27)}\n├ Вы встретили {Fore.LIGHTRED_EX}{location1_monsters[0]}") 
-            print(f"{Fore.WHITE}├ ○ {Fore.LIGHTRED_EX+wolf[1]}{Fore.WHITE}  ♥ {Fore.LIGHTRED_EX+wolf[0]}{Fore.WHITE}  ➹ {Fore.LIGHTRED_EX+wolf[2]}\n")
-            print("└─────┐─────────────────────┘")
+            print(f"{Fore.WHITE}├ ○ {Fore.LIGHTRED_EX+wolf[1]}{Fore.WHITE}  ♥ {Fore.LIGHTRED_EX+wolf[0]}{Fore.WHITE}  ➹ {Fore.LIGHTRED_EX+wolf[2]}")
+            print(f"{Fore.WHITE}└─────┐─────────────────────┘")
             question = input(f"      │ {Fore.CYAN} Попытка побега? {Fore.WHITE} (да/нет) ").lower()
             if question == "да":
                 print(f"      │\n      │ {Fore.CYAN} Пробуем...")
                 rand = randint(0,50)
                 sleep(2)
                 if rand >= 10 and rand <= 12:
-                    sound_play.success_sound(False)
-                    print(f"      │\n      │ {Fore.CYAN}Получилось!"); pass
+                    print(f"{Fore.WHITE}      │\n      │ {Fore.CYAN}Получилось!") 
+                    sound_play.success_sound(False); sleep(2); pass
                 else:
-                    sound_play.failure_sound(False)
-                    print(f"      │\n      │ {Fore.CYAN} Неудача!")
+                    print(f"{Fore.WHITE}      │\n      │ {Fore.CYAN} Неудача!")
+                    sound_play.failure_sound(False); sleep(2)
 
 def show_parameters():
     print(f"{Fore.WHITE}   ●  ├ У тебя         │\n      ├────────────────┤")
