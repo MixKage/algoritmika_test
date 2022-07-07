@@ -151,8 +151,9 @@ def main():
                             print("├───────────────────────────┘"); sleep(1)
                             question = int(input(f"{Fore.WHITE}│ {Fore.BLACK} ☦ {Fore.WHITE} От {Fore.LIGHTRED_EX} ВАС {Fore.WHITE} зависит {Fore.LIGHTRED_EX} ЕГО СУДЬБА: "))
                             break
-        elif question == 2: print(Fore.LIGHTCYAN_EX + "Их пока нет.\n"*50)
-        elif question == 3: print(f"{Fore.LIGHTCYAN_EX}1. Игра на одном дыхании сохранений нет.\n пока всё\n\n")
+        elif question == 2: print(f"{Fore.LIGHTCYAN_EX}{soon_text}\n\n"*10)
+        elif question == 3: print(f"{Fore.LIGHTCYAN_EX}1. Игра на одном дыхании сохранений нет.\n пока всё"+"\n"*50)
+        elif question == 4: print(f"{Fore.LIGHTCYAN_EX}{soon_text}\n\n"*10)
         sleep(3)
         question = starter_game_menu()
 
