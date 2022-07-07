@@ -21,6 +21,8 @@ soon_text = """
 ██████ ███████ ███████ ██    ██
 """
 
+version = "2betafb"
+
 def DRAWline(mark, sym):
     if mark == 1:
         line="┌"
