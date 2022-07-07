@@ -135,7 +135,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF):
 
 
 def main():
-    #sound_play.first_music()
+    sound_play.first_music(False)
     logo()
 
     sleep(1)
