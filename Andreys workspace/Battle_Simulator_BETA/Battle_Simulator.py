@@ -72,6 +72,8 @@ level = 1
 xp_ganing = 20
 xp = 0
 
+playsound('Andreys workspace\Battle_Simulator_BETA\Milky_Ways.mp3', False)
+
 print('Welcome to my new (python) project! And now it is...')
 sleep(2)
 print('The fighting game!')
@@ -196,7 +198,7 @@ while True:
 
     elif poss1 == -4 and poss2 == 2:
         if boss1_won == 'false':
-            playsound('C:/Users/user/Desktop/Projects/algoritmika_test/Andreys workspace/Battle_Simulator_BETA/Milky_Ways.mp3', False)
+            playsound('Andreys workspace\Battle_Simulator_BETA\Milky_Ways.mp3', False)
             print('--------------------------------')
             print('Something powerfull is coming...')
             sleep(6)
