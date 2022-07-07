@@ -35,7 +35,7 @@ def starter_game_menu():
     print(f"{Fore.WHITE}{DRAWline(1,27)}\n├ 1.{Fore.LIGHTCYAN_EX} Играть{Fore.WHITE}                 │")
     print(f"├ 2. {Fore.LIGHTCYAN_EX}Настройки{Fore.WHITE}              │")
     print(f"├ 3. {Fore.LIGHTCYAN_EX}FAQ{Fore.WHITE}                    │")
-    print(f"├ 4. {Fore.LIGHTCYAN_EX}Прочее{Fore.WHITE}                 │")
+    print(f"├ 4. {Fore.LIGHTCYAN_EX}История{Fore.WHITE}                │")
     print(f"├ 5. {Fore.LIGHTCYAN_EX}Выход{Fore.WHITE}                  │")
     print("└─────┐─────────────────────┘")
     question = int(input("      │ Выбор: "))
