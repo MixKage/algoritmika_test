@@ -58,7 +58,7 @@ def first_location(): # Первая локация, 5 монстров
     global coins
     global damage
     global hp
-    rand = randint(0,12)
+    rand = randint(0,20)
     
     if rand == 8:
         road_generator(2)
@@ -102,7 +102,7 @@ def battle(): #битва
                 print(f"      │\n      │ {Fore.CYAN} Пробуем...")
                 rand = randint(0,50)
                 sleep(2)
-                if rand >= 10 and rand <= 12:
+                if rand >= 0 and rand <= 8:
                     print(f"{Fore.WHITE}      │\n      │ {Fore.CYAN}Получилось!") 
                     sound_play.success_sound(False); sleep(2); pass
                 else:
@@ -155,8 +155,8 @@ def main():
                             print("\n"*50)
                             show_parameters()
                             print(f"{Fore.WHITE}\n{DRAWline(1,27)}\n├ На табличке написанно.")
-                            print("│ ← Лес      ↑ Деревня \n├ Куда мы дальше отправимся?\n├"+"─"*24+f"┤\n│ 1.{Fore.LIGHTCYAN_EX} Леc                 {Fore.WHITE}│")
-                            print(f"│ 2.{Fore.LIGHTCYAN_EX} Деревня             {Fore.WHITE}│")
+                            print("│ ← Лес      ↑ Деревня \n├ Куда мы дальше отправимся?\n├"+"─"*24+f"\n│ 1.{Fore.LIGHTCYAN_EX} Леc {Fore.WHITE}")
+                            print(f"│ 2.{Fore.LIGHTCYAN_EX} Деревня {Fore.WHITE}")
                             print("├───────────────────────────┘"); sleep(1)
                             question = int(input(f"{Fore.WHITE}│ {Fore.BLACK} ☦ {Fore.WHITE} От {Fore.LIGHTRED_EX} ВАС {Fore.WHITE} зависит {Fore.LIGHTRED_EX} ЕГО СУДЬБА: "))
                             break
