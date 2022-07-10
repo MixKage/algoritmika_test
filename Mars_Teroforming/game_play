@@ -1,0 +1,14 @@
+from statistic import *
+from random import *
+def new_planet(H2O, pressure, temperature, atmosher, biosphere):
+    H2O = randint(1,100)
+    pressure = randint(1,100)
+    temperature = randint(-100,100)
+    atmosher = randint(0,100)
+    biosphere = randint(1,100)
+    if H2O <= 15 and H2O >= 25:
+        if temperature <= 40 and temperature >= 0:
+            if atmosher <= 2 and atmosher >= 1:
+                print("Планету можнео заселить!")
+                if biosphere >= 1:
+                    print("Планета обитаема!")
