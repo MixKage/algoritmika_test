@@ -3,6 +3,8 @@ from random import *
 from time import *
 from data_game import *
 import sound_play
+from game_events import *
+
 
 hp = 0
 lvl = 0
@@ -108,6 +110,8 @@ def battle(): #битва
                 else:
                     print(f"{Fore.WHITE}      │\n      │ {Fore.CYAN} Неудача!")
                     sound_play.failure_sound(False); sleep(2)
+                    battle("Волк")
+
 
 def show_parameters(): # статы
     print(f"{Fore.WHITE}   ●  ├ У тебя         │\n      ├────────────────┤")
@@ -135,7 +139,7 @@ def iGame(iHp, iLvl, iCoins, iDMG, iDEF): # инициальзация
 
 
 def main():
-    #sound_play.first_music(False)
+    sound_play.first_music(False)
     logo()
 
     sleep(1)
