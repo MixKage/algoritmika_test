@@ -8,7 +8,9 @@ def new_planet(H2O, pressure, temperature, atmosher, biosphere):
     biosphere = randint(1,100)
     if H2O <= 15 and H2O >= 25:
         if temperature <= 40 and temperature >= 0:
-            if atmosher <= 2 and atmosher >= 1:
-                print("Планету можнео заселить!")
-                if biosphere >= 1:
-                    print("Планета обитаема!")
+            if pressure <= 40 and temperature >= 0:
+                if atmosher <= 2 and atmosher >= 1:
+                    print("Планету можнео заселить!")
+                    if biosphere >= 1:
+                        print("Планета обитаема!")
+new_planet(H2O, pressure, temperature, atmosher, biosphere)
