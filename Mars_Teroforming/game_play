@@ -13,4 +13,9 @@ def new_planet(H2O, pressure, temperature, atmosher, biosphere):
                     print("Планету можнео заселить!")
                     if biosphere >= 1:
                         print("Планета обитаема!")
-new_planet(H2O, pressure, temperature, atmosher, biosphere)
+def evry_motion():
+    open = input("Насиление - 1\nИследовать - 2\nКультура - 3\nСпутники - 4\n")
+    if open == 1:
+        open_house = input("Город - 1\nФорпост - 2\nСтатистика по насилению - 3\nВыход - 4\n")
+        if open_house == 1:
+            build_house = input("Температура - 1\nДавление - 2\nВода - 3\nКислород - 4\n ")
