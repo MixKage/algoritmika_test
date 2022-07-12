@@ -1,5 +1,11 @@
-import math
+import queue
+import pygame
 
-float_null = float(0)
+pygame.init()
 
-print(float_null/float_null)
+sc = pygame.display.set_mode((1000, 500))
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit()
