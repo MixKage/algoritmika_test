@@ -1,6 +1,21 @@
-from statistic import *
 from random import *
-def new_planet(H2O, pressure, temperature, atmosher, biosphere):
+#Вода
+H2O = 0
+#Давление
+Pa = 0
+#Температура
+temperature = 0
+#Aтмосфера
+atmosphere = 0
+#Биосфера
+biosphere = 0
+#Иследование
+investigation_1 = "КосмоПорт"
+investigation_2 = "Сталелительный завод"
+investigation_3 = ""
+investigation_4 = ""
+investigation_5 = ""
+def random_planet(H2O, pressure, temperature, atmosher, biosphere):
     H2O = randint(1,100)
     pressure = randint(1,100)
     temperature = randint(-100,100)
@@ -19,3 +34,6 @@ def evry_motion():
         open_house = input("Город - 1\nФорпост - 2\nСтатистика по насилению - 3\nВыход - 4\n")
         if open_house == 1:
             build_house = input("Температура - 1\nДавление - 2\nВода - 3\nКислород - 4\n ")
+            #if 
+    elif open == 2:
+        investigation = input( "- 1\n"" - 2\n"" - 3\n"" - 4\n")
