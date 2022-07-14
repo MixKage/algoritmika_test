@@ -51,6 +51,7 @@ def evry_motion():
             #if 
     #Иследовать
     elif open == 2:
+        investigation = input (investigation_1 ,"\n",investigation_2 ,"\n",investigation_3 ,"\n",investigation_4 ,"\n",investigation_5 ,"\n")
         if kosmoport == True:
             investigation_1 = ""
         if steelworksfabrik == True:
@@ -61,7 +62,6 @@ def evry_motion():
             investigation_4 = ""
         if correctionalarea == True:
             investigation_5 = ""
-        investigation = input (investigation_1 ,"\n",investigation_2 ,"\n",investigation_3 ,"\n",investigation_4 ,"\n",investigation_5 ,"\n")
         if investigation == 1 and kosmoport == False:
             kosmoport = True
         elif investigation == 2 and steelworksfabrik == False:
@@ -75,4 +75,5 @@ def evry_motion():
     #Культура
     elif open == 3:
         print("Количество очков:",bespectacledcultures)
-        input("")
+        open1 = input("Независимость(+10%) - 1\nДемократия(+10%) - 2\nАфтократия(+10) - 3\nКоммунизм(+10) - 4\nФашизм(+10%) - 5\nЛиберализм(+10%) - 6\nЭкологи(+10) - 7\nПромышленики(+10) - 8\n")
+        if open1 == 
