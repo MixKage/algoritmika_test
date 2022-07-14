@@ -35,8 +35,13 @@ def evry_motion():
     #Постройки
 
     #Культура
-    bespectacledcultures = 0 
-
+    bespectacledcultures = 0
+    #Cледующий_ход
+    n_independence = 0
+    n_democracy = 0
+    n_communism = 0
+    n_fascism = 0
+    n_ecologists = 0
     #Иследование
     investigation_1 = "КосмоПорт - 1(Цена:100.000$)"
     investigation_2 = "Сталелительный завод - 2(Цена:500.000$)"
@@ -74,6 +79,30 @@ def evry_motion():
             correctionalarea = True
     #Культура
     elif open == 3:
-        print("Количество очков:",bespectacledcultures)
-        open1 = input("Независимость(+10%) - 1\nДемократия(+10%) - 2\nАфтократия(+10) - 3\nКоммунизм(+10) - 4\nФашизм(+10%) - 5\nЛиберализм(+10%) - 6\nЭкологи(+10) - 7\nПромышленики(+10) - 8\n")
-        if open1 == 
+        input("")
+            print("Количество очков:",bespectacledcultures)
+            open1 = input("Независимость(+10%) - 1\nДемократия(+10%) - 2\nАфтократия(+10) - 3\nКоммунизм(+10) - 4\nФашизм(+10%) - 5\nЛиберализм(+10%) - 6\nЭкологи(+10) - 7\nПромышленики(+10) - 8\n")
+            if open1 == 1:
+                n_independence += 10
+            if open1 == 2:
+                n_democracy += 10
+                n_autocracy -= 10
+            if open1 == 3:
+                n_autocracy += 10
+                n_democracy -= 10
+            if open1 == 4:
+                n_communism += 10
+                n_fascism -= 5
+                n_liberalism -= 5
+            if open1 == 5:
+                n_communism -= 5
+                n_fascism += 10
+                n_liberalism -= 5
+            if open1 == 6:
+                n_liberalism += 10
+                n_communism -= 5
+                n_fascism -= 5
+            if open1 == 7:
+                n_ecologists += 10
+            if open1 == 8:
+                n_industrialists += 10
