@@ -9,12 +9,9 @@ temperature = 0
 atmosphere = 0
 #Биосфера
 biosphere = 0
-#Иследование
-investigation_1 = "КосмоПорт"
-investigation_2 = "Сталелительный завод"
-investigation_3 = ""
-investigation_4 = ""
-investigation_5 = ""
+
+
+
 def random_planet(H2O, pressure, temperature, atmosher, biosphere):
     H2O = randint(1,100)
     pressure = randint(1,100)
@@ -29,11 +26,83 @@ def random_planet(H2O, pressure, temperature, atmosher, biosphere):
                     if biosphere >= 1:
                         print("Планета обитаема!")
 def evry_motion():
+    #Постойки для изучения
+    kosmoport = False
+    steelworksfabrik = False
+    embassy = False
+    townhall = False
+    correctionalarea = False
+    #Постройки
+
+    #Культура
+    bespectacledcultures = 0
+    #Cледующий_ход
+    n_independence = 0
+    n_democracy = 0
+    n_communism = 0
+    n_fascism = 0
+    n_ecologists = 0
+    #Иследование
+    investigation_1 = "КосмоПорт - 1(Цена:100.000$)"
+    investigation_2 = "Сталелительный завод - 2(Цена:500.000$)"
+    investigation_3 = "Посольство - 3(Цена:250.000$)"
+    investigation_4 = "Ратуша - 4(Цена:100.000$)"
+    investigation_5 = "Правительная площадь - 5(Цена:100.000$)"
     open = input("Насиление - 1\nИследовать - 2\nКультура - 3\nСпутники - 4\n")
     if open == 1:
         open_house = input("Город - 1\nФорпост - 2\nСтатистика по насилению - 3\nВыход - 4\n")
         if open_house == 1:
             build_house = input("Температура - 1\nДавление - 2\nВода - 3\nКислород - 4\n ")
             #if 
+    #Иследовать
     elif open == 2:
-        investigation = input( "- 1\n"" - 2\n"" - 3\n"" - 4\n")
+        investigation = input (investigation_1 ,"\n",investigation_2 ,"\n",investigation_3 ,"\n",investigation_4 ,"\n",investigation_5 ,"\n")
+        if kosmoport == True:
+            investigation_1 = ""
+        if steelworksfabrik == True:
+            investigation_2 = ""
+        if embassy == True:
+            investigation_3 = ""
+        if townhall == True:
+            investigation_4 = ""
+        if correctionalarea == True:
+            investigation_5 = ""
+        if investigation == 1 and kosmoport == False:
+            kosmoport = True
+        elif investigation == 2 and steelworksfabrik == False:
+            steelworksfabrik = True
+        elif investigation == 3 and embassy == False:
+            embassy = True
+        elif investigation == 4 and townhall == False:
+            townhall = True
+        elif investigation == 5 and correctionalarea == False:
+            correctionalarea = True
+    #Культура
+    elif open == 3:
+        input("")
+            print("Количество очков:",bespectacledcultures)
+            open1 = input("Независимость(+10%) - 1\nДемократия(+10%) - 2\nАфтократия(+10) - 3\nКоммунизм(+10) - 4\nФашизм(+10%) - 5\nЛиберализм(+10%) - 6\nЭкологи(+10) - 7\nПромышленики(+10) - 8\n")
+            if open1 == 1:
+                n_independence += 10
+            if open1 == 2:
+                n_democracy += 10
+                n_autocracy -= 10
+            if open1 == 3:
+                n_autocracy += 10
+                n_democracy -= 10
+            if open1 == 4:
+                n_communism += 10
+                n_fascism -= 5
+                n_liberalism -= 5
+            if open1 == 5:
+                n_communism -= 5
+                n_fascism += 10
+                n_liberalism -= 5
+            if open1 == 6:
+                n_liberalism += 10
+                n_communism -= 5
+                n_fascism -= 5
+            if open1 == 7:
+                n_ecologists += 10
+            if open1 == 8:
+                n_industrialists += 10
