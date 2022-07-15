@@ -25,6 +25,8 @@ height = 800 # HEIGHT
 # Variables
 pensize = 2  # radius of circle
 sel_color = 1  # from colors
+radius = 20
+
 
 # BOOLS
 min_or_max = False  # pensize
