@@ -20,7 +20,7 @@ import pygame
 FPS = 75  # Frame Per Seconds
 weight = 800 # WEIGHT
 height = 800 # HEIGHT
-
+icon = pygame.image.load("algoritmika_test\Maxim's workspace\paint\logo.jpg")
 
 # Variables
 pensize = 2  # radius of circle
@@ -32,6 +32,14 @@ radius = 20
 min_or_max = False  # pensize
 bool = True  # Useful bool, just bool
 isMousePressed = False  # MousePressed
+
+keybinds = """
+E - Earser
+Space - Earse All
+
+Left, Right - Color change
+Up, Down - Size change
+"""
 
 colors = {
     1: (0, 0, 0),   # BLACK
