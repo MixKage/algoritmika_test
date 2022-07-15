@@ -57,7 +57,7 @@ while True:  # MAIL LOOP
                 if cfg.bool == False: print(f"\nEarser {cfg.bool}"); cfg.sel_color = 1; cfg.bool = True
                 else: print(f"\nEarser {cfg.bool}"); cfg.sel_color = len(cfg.colors); cfg.bool = False; 
             
-            elif event.key == pygame.K_SPACE:
+            elif event.key == pygame.K_SPACE:  # EARSE ALL
                 pygame.draw.rect(sc, cfg.colors[len(cfg.colors)], [0,0, cfg.weight, cfg.height])
                 print("\n Earsed All")
 
