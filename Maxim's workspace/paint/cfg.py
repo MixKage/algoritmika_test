@@ -15,29 +15,34 @@
 
 import pygame
 
+
+
 FPS = 75  # Frame Per Seconds
-screen_size = (800, 800)  # WEIGHT, HEIGHT
-font = pygame.font.SysFont('microsofttaile', 12)
+weight = 800 # WEIGHT
+height = 800 # HEIGHT
 
 
-bool = False  # Useful bool, just bool
+# Variables
+pensize = 2  # radius of circle
+sel_color = 1  # from colors
 
+# BOOLS
+min_or_max = False  # pensize
+bool = True  # Useful bool, just bool
 isMousePressed = False  # MousePressed
 
 colors = {
     1: (0, 0, 0),   # BLACK
-    2: (255, 255, 255),   # WHITE
-    3: (255, 0, 0),   # RED
-    4: (0, 255, 0),   # GREEN
-    5: (0, 0, 225),   # BLUE
-    6: (255, 255, 0),   # YELLOW
-    7: (0, 255, 255),    # CYAN
-    8: (255, 0, 255),    # MAGENTA
-    9: (128, 0, 128),    # PURPLE
-    10: (128, 128, 128)  # GRAY
+    2: (255, 0, 0),   # RED
+    3: (0, 255, 0),   # GREEN
+    4: (0, 0, 225),   # BLUE
+    5: (255, 255, 0),   # YELLOW
+    6: (0, 255, 255),    # CYAN
+    7: (255, 0, 255),    # MAGENTA
+    8: (128, 0, 128),    # PURPLE
+    9: (128, 128, 128),  # GRAY
+    10: (255, 255, 255)   # WHITE
 }
 
 
 
-pensize = 2  # radius of circle
-sel_color = 1  # from colors
