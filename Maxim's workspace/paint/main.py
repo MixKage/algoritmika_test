@@ -59,7 +59,7 @@ while True:  # MAIL LOOP
             
             elif event.key == pygame.K_SPACE:  # EARSE ALL
                 pygame.draw.rect(sc, cfg.colors[len(cfg.colors)], [0,0, cfg.weight, cfg.height])
-                print("\n Earsed All")
+                print("\nEarsed All")
 
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -75,7 +75,7 @@ while True:  # MAIL LOOP
             paint.drawCircle(sc, x,y, cfg.colors[cfg.sel_color], cfg.pensize)
             # paint.drawAline(sc, cfg.colors[cfg.sel_color], x,y)
 
-    paint.drawCircle(sc, 40, 40, cfg.colors[cfg.sel_color], 20)
+    paint.drawCircle(sc, cfg.weight//15, cfg.height//15, cfg.colors[cfg.sel_color], cfg.radius)  # 40, 40
     # sc.blit(paint.showText(cfg.pensize, 1, cfg.colors[1]), (50,40))
     pygame.display.update()
 
