@@ -1,19 +1,24 @@
+
+#                                      ___      
+#                     .-.             (   )     
+#    .-..     .---.  ( __)  ___ .-.    | |_     
+#   /    \   / .-, \ (''") (   )   \  (   __)   
+#  ' .-,  ; (__) ; |  | |   |  .-. .   | |      
+#  | |  . |   .'`  |  | |   | |  | |   | | ___  
+#  | |  | |  / .'| |  | |   | |  | |   | |(   ) 
+#  | |  | | | /  | |  | |   | |  | |   | | | |  
+#  | |  ' | ; |  ; |  | |   | |  | |   | ' | |  
+#  | `-'  ' ' `-'  |  | |   | |  | |   ' `-' ;  
+#  | \__.'  `.__.'_. (___) (___)(___)   `.__.   
+#  | |                                          
+# (___)  
+
+
 import pygame
-BLUE = (0 , 0 , 255)
-screen = pygame.display.set_mode( (500, 500) )
-isPressed = False
+import cfg
 
-def drawCircle( screen, x, y ):
-  pygame.draw.circle( screen, BLUE, ( x, y ), 5 )
+def drawCircle( screen, x,y, color, size):
+  pygame.draw.circle( screen, color, ( x,y ), size )
 
-
-while True: 
-    for event in pygame.event.get():
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            isPressed = True
-        elif event.type == pygame.MOUSEBUTTONUP:
-            isPressed = False
-        elif event.type == pygame.MOUSEMOTION and isPressed == True:         
-            ( x, y ) = pygame.mouse.get_pos()       # returns the position of mouse cursor
-            drawCircle( screen, x, y )
-    pygame.display.flip()
+def showText(text, smooth, color):
+    text = cfg.font.render(text, smooth, color)
