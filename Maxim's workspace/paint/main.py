@@ -22,8 +22,9 @@ pygame.init()
 
 sc = pygame.display.set_mode((cfg.weight, cfg.height))
 pygame.display.set_caption("Paint")   # TITLE
+pygame.display.set_icon(cfg.icon)
 sc.fill(cfg.colors[10])  # BACKGROUND
-
+print(cfg.keybinds)
 
 while True:  # MAIL LOOP
     for event in pygame.event.get():  # MAIN EVENT CHECKER
