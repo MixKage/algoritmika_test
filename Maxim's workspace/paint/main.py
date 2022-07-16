@@ -22,7 +22,7 @@ pygame.init()
 
 sc = pygame.display.set_mode((cfg.weight, cfg.height))
 pygame.display.set_caption("Paint")   # TITLE
-pygame.display.set_icon(cfg.icon)
+# pygame.display.set_icon(cfg.icon)   NOT WORKING
 sc.fill(cfg.colors[10])  # BACKGROUND
 print(cfg.keybinds)
 i = 0
