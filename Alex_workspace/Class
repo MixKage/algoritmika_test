@@ -1,0 +1,32 @@
+from time import sleep
+class Hero():
+    def __init__(seft,name, health, class_armor, impact_force, weapon):
+        seft.name = name
+        seft.health = health
+        seft.class_armor = class_armor
+        seft.impact_force = impact_force
+        seft.weapon = weapon
+    def print_info(seft):
+        print("По приветствуй персонажа:",seft.name)
+        print("Количество здаровья:",seft.health)
+        print("Класс брони:",seft.class_armor)
+        print("Сила удара:",seft.impact_force)
+        print("Оружие:",seft.weapon)
+
+    def strike(self, enemy ):
+        print( f'-> УДАР! {self.name} атакует {enemy.name} с силой {self.impact_force}, используя {self.weapon} \n')
+        enemy.class_armor -= self.impact_force
+        if enemy.class_armor < 0:
+            enemy.health += enemy.class_armor
+            enemy.class_armor = 0
+            print(f'{enemy.name} покачнулся.\nКласс его брони упал до {enemy.class_armor} a уровень здоровья до {enemy.health}\n')
+print("В синим углу ринга:")
+Best_person = Hero("Самурай",100,10,25,"Катана")
+sleep(5)
+print("В красном углу ринга:")
+Best_person.print_info()
+sleep(5)
+print("VS")
+Bad_person = Hero("Вор",50,5, 12.5 ,"Нож")
+Bad_person.print_info()
+Bad_person.strike(Best_person)
