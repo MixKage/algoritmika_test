@@ -34,6 +34,7 @@ bool = True  # Useful bool, just bool
 isMousePressed = False  # MousePressed
 
 keybinds = """
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 E - Earser
 Space - Earse All
 M - Minimum/Maximum Size
