@@ -36,6 +36,7 @@ isMousePressed = False  # MousePressed
 keybinds = """
 E - Earser
 Space - Earse All
+M - Minimum/Maximum Size
 
 Left, Right - Color change
 Up, Down - Size change
