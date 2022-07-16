@@ -20,7 +20,7 @@ import pygame
 FPS = 75  # Frame Per Seconds
 weight = 800 # WEIGHT
 height = 800 # HEIGHT
-#  icon = pygame.image.load("algoritmika_test\Maxim's workspace\paint\logo.jpg")
+icon = pygame.image.load("algoritmika_test\Maxim's workspace\paint\logo.jpg")
 
 # Variables
 pensize = 2  # radius of circle
