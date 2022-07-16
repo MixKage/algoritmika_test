@@ -37,8 +37,12 @@ height = 400
 
 
 #  -------- All Functions --------
-def randomСolor():
+def randomСolor(): #  Random Rgb Color
     return list(np.random.choice(range(256), size=3))
+
+def text(name, text, color, align, font, size, type):  #  Show text by Turtle
+    name.color(color)
+    name.write(text,align=align,font=(font, size, type))
 
 
 #  -------- Classes --------
