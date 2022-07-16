@@ -25,7 +25,7 @@ pygame.display.set_caption("Paint")   # TITLE
 pygame.display.set_icon(cfg.icon)
 sc.fill(cfg.colors[10])  # BACKGROUND
 print(cfg.keybinds)
-
+i = 0
 while True:  # MAIL LOOP
     for event in pygame.event.get():  # MAIN EVENT CHECKER
         if event.type == pygame.QUIT: sys.exit()  # EXIT
@@ -75,10 +75,13 @@ while True:  # MAIL LOOP
             (x, y) = pygame.mouse.get_pos()       # returns the position of mouse cursor
             paint.drawCircle(sc, x,y, cfg.colors[cfg.sel_color], cfg.pensize)
             # paint.drawAline(sc, cfg.colors[cfg.sel_color], x,y)
-
+    if i == 50000:
+        print(cfg.keybinds)
+        i=0
     paint.drawCircle(sc, cfg.weight//15, cfg.height//15, cfg.colors[cfg.sel_color], cfg.radius)  # 40, 40
     # sc.blit(paint.showText(cfg.pensize, 1, cfg.colors[1]), (50,40))
     pygame.display.update()
+    i+=1
 
 
     
