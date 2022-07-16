@@ -79,7 +79,7 @@ def evry_motion():
             correctionalarea = True
     #Культура
     elif open == 3:
-        input("")
+        k_open = input("")
             print("Количество очков:",bespectacledcultures)
             open1 = input("Независимость(+10%) - 1\nДемократия(+10%) - 2\nАфтократия(+10) - 3\nКоммунизм(+10) - 4\nФашизм(+10%) - 5\nЛиберализм(+10%) - 6\nЭкологи(+10) - 7\nПромышленики(+10) - 8\n")
             if open1 == 1:

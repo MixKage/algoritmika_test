@@ -1,0 +1,41 @@
+from turtle import*
+
+t = Turtle()
+t.color("red")
+t.pensize(10)
+t.speed(10)
+s = t.getscreen()
+s.listen()
+
+
+def go(x,y):
+    t.goto(x,y)
+
+
+def move(x,y):
+    t.penup()
+    t.begin_fill
+    t.goto(x,y)
+    t.end_fill()
+    t.pendown()
+    go(x,y)
+step = 15
+def stepUp():
+ t.goto(t.xcor(), t.ycor() + step)
+ 
+def stepDown():
+ t.goto(t.xcor(), t.ycor() - step)
+ 
+def stepLeft():
+ t.goto(t.xcor() - step, t.ycor())
+ 
+def stepRight():
+ t.goto(t.xcor() + step, t.ycor())
+
+s.onkey(stepUp,"w")
+s.onkey(stepDown,"s")
+s.onkey(stepLeft,"d")
+s.onkey(stepRight,"a")
+t.ondrag(go)
+s.onscreenclick(move)
+input("Выход:")
