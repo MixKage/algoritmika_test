@@ -34,7 +34,8 @@ colors = [
 #  -------- Variables --------
 weight = 400
 height = 400
-
+x = -500
+y = -500
 
 #  -------- All Functions --------
 def randomСolor(): #  Random Rgb Color
