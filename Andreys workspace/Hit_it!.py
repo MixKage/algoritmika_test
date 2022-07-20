@@ -33,6 +33,7 @@ class Sprite(Turtle):
 t1 = Sprite()
 t1.penup()
 t1.start('circle', 'blue', 0, -75)
+t1.step = 25
 
 t2 = Sprite()
 t2.penup()
