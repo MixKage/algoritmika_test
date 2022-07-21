@@ -14,6 +14,7 @@
 # (___)  
 
 
+from turtle import pensize
 import pygame, sys
 import cfg, paint
 
@@ -24,7 +25,10 @@ sc = pygame.display.set_mode((cfg.weight, cfg.height))
 pygame.display.set_caption("Paint")   # TITLE
 # pygame.display.set_icon(cfg.icon)   NOT WORKING
 sc.fill(cfg.colors[10])  # BACKGROUND
+pygame.mouse.set_visible(False)
 print(cfg.keybinds)
+
+
 i = 0
 while True:  # MAIL LOOP
     for event in pygame.event.get():  # MAIN EVENT CHECKER
@@ -79,9 +83,10 @@ while True:  # MAIL LOOP
         print(cfg.keybinds)
         i=0
     paint.drawCircle(sc, cfg.weight//15, cfg.height//15, cfg.colors[cfg.sel_color], cfg.radius)  # 40, 40
+    coord = pygame.mouse.get_pos()
+    sc.blit(sc, pygame.draw.circle(sc, (cfg.colors[1]), coord, cfg.pensize))
     # sc.blit(paint.showText(cfg.pensize, 1, cfg.colors[1]), (50,40))
     pygame.display.update()
     i+=1
-
 
     
