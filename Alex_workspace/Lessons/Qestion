@@ -1,0 +1,26 @@
+
+import pygame 
+pygame.init()
+class TextArial(pygame):
+    def __init__(self,x,y,w,h,mw,color,fount):
+        x.self = x
+        y.self = y
+        w.self = w
+        h.self = h
+        mw.self = mw
+        color.self = mw
+        self.fount = fount
+        self.rect = pygame.Rect(x,y,w,h)
+        pygame.draw.rect(mw,color,rect)
+        mw = pygame.display.set_mode((500,500))
+        
+        fount = pygame.fount.Fount(None,70)
+        self.text = "Что угодно!"
+    def text(self):
+        qestion = self.fount.render(self.text,True(0,0,0))
+        self.mw.blit(qestion(self.x,self.y))
+        
+
+
+
+
