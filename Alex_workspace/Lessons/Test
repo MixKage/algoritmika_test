@@ -1,0 +1,69 @@
+#импорт библеотек
+from random import*
+from time import*
+import pygame
+pygame.init()
+class Area():
+    def __init__(self,color=None,x=0,y=0,width=10,height=30):
+        self.rect = pygame.Rect(x,y,width,height)
+        self.color = color
+    def color_init(self, color_now):
+        self.color = color_now
+    def fill_color(self):
+        pygame.drow.rect(mw,self.color,self.rect)
+    def set_outline(self,shift_x):
+        pygame.drow.rect(mw,self.color,self.rects,shift_x)
+def collidepoint(self, x, y): 
+    return self.rect.collidepoint(x,y)
+class Lable(Area):
+    def set_text(self, text, fsize=12, text_color=(200, 255, 255)):
+        self.text = text
+        self.image = pygame.font.Font(None, fsize).render(text, True, text_color)
+
+win_range = 0
+black = (200, 255, 255)
+yellow = (255, 255, 0)
+dark_blue = (0, 0, 100)
+blue = (80, 80, 255)
+mw = pygame.display.set_mode((500,500))
+mw.fill(blue)
+clock = pygame.time.Clock()
+card1 = Lable(Area)
+card1.color_init(yellow)
+card1.set_outline(5)
+card1.fill_color()
+card2 = Lable(Area)
+card2.color_init(yellow)
+card2.set_outline(5)
+card2.fill_color()
+card3 = Lable(Area)
+card3.color_init(yellow)
+card3.set_outline(5)
+card3.fill_color()
+card4 = Lable(Area)
+card4.color_init(yellow)
+card4.set_outline(5)
+card4.fill_color()
+cards =[]
+num_cards = 0
+wait = 0
+while True:
+    if wait == 0:
+        wait = 20
+        click = randint(0,4)
+        for i in range(num_card):
+            cards[i].draw(10,40)
+        else:
+            wait-=1
+    for event in pygame.event.get:
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1: 
+            x, y = event.pos
+            for i in range(num_cards): 
+                if cards[i].collidepoint(x,y): 
+                    if i == click: 
+                        cards[i].color(yellow)
+                    else:
+                        cards[i].color(yellow)
+                    cards[i].fill()
+    pygame.display.update()
+    clock.tick(40)
