@@ -1,2 +1,2 @@
 # algoritmika_test
- кто нибудь живой? - матвей 19.08.2023
+ somebody delete it
